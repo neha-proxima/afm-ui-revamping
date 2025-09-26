@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="header-right">
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-bar"
+        placeholder="Search diagrams, templates, or settings..."
+      />
+    </div>
+
+    <button class="notification-button">
+      <i class="fas fa-bell"></i>
+      <span class="notification-badge"></span>
+    </button>
+
+    <div class="profile-dropdown">
+      <button class="profile-button" onclick="toggleProfileDropdown()">
+        FS
+      </button>
+      <div class="dropdown-menu" id="profileDropdown">
+        <button class="dropdown-item">
+          <i class="fas fa-cog profile-dropdown-icon"></i>
+          Settings
+        </button>
+        <button class="dropdown-item">
+          <i class="fas fa-crown profile-dropdown-icon"></i>
+          Subscription
+          <span class="pro-chip">PRO</span>
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item">
+          <i class="fas fa-question-circle profile-dropdown-icon"></i>
+          Help Center
+        </button>
+        <button class="dropdown-item">
+          <i class="fas fa-sign-out-alt profile-dropdown-icon"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

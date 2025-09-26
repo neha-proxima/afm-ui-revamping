@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Samples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f5f6fa;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      width: 280px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px 0 10px;
+    }
+    .card p {
+      font-size: 14px;
+      padding: 0 15px 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select a UI Sample</h1>
+  
+  <div class="card-container">
+    <a href="ui-sample1.html" class="card">
+      <img src="https://via.placeholder.com/280x160/74b9ff/ffffff?text=UI+Sample+1" alt="UI Sample 1">
+      <h3>UI Sample 1</h3>
+      <p>A modern clean dashboard style layout.</p>
+    </a>
+    
+    <a href="ui-sample2.html" class="card">
+      <img src="https://via.placeholder.com/280x160/55efc4/ffffff?text=UI+Sample+2" alt="UI Sample 2">
+      <h3>UI Sample 2</h3>
+      <p>A colorful e-commerce product card design.</p>
+    </a>
+    
+    <a href="ui-sample3.html" class="card">
+      <img src="https://via.placeholder.com/280x160/fab1a0/ffffff?text=UI+Sample+3" alt="UI Sample 3">
+      <h3>UI Sample 3</h3>
+      <p>A minimal profile or portfolio page layout.</p>
+    </a>
+  </div>
+
+</body>
+</html>

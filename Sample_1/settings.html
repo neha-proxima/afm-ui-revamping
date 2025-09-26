@@ -1,0 +1,310 @@
+<div class="settings-container" id="settingsContent" style="display: none">
+  <!-- Profile Settings -->
+  <div class="settings-section">
+    <div class="settings-section-header">
+      <h3 class="settings-section-title">Profile</h3>
+      <p class="settings-section-subtitle">
+        Manage your profile information and avatar
+      </p>
+    </div>
+    <div class="settings-section-body">
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Profile Picture</div>
+          <div class="setting-description">
+            Upload a new avatar or change your current one
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="avatar-upload">
+            <div class="current-avatar">FS</div>
+            <div class="avatar-controls">
+              <button class="btn-secondary">Upload New</button>
+              <button class="btn-secondary">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Full Name</div>
+          <div class="setting-description">
+            Your full name as it appears on your profile
+          </div>
+        </div>
+        <div class="setting-control">
+          <input
+            type="text"
+            class="setting-input"
+            value="Florence Shaw"
+            placeholder="Enter your full name"
+          />
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Email Address</div>
+          <div class="setting-description">
+            Your primary email address for account notifications
+          </div>
+        </div>
+        <div class="setting-control">
+          <input
+            type="email"
+            class="setting-input"
+            value="florence@untitledui.com"
+            placeholder="Enter your email"
+          />
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Time Zone</div>
+          <div class="setting-description">
+            Used for scheduling and date displays
+          </div>
+        </div>
+        <div class="setting-control">
+          <select class="setting-select">
+            <option>UTC-8 (Pacific Time)</option>
+            <option>UTC-5 (Eastern Time)</option>
+            <option>UTC+0 (GMT)</option>
+            <option>UTC+5:30 (India Standard Time)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications Settings -->
+  <div class="settings-section">
+    <div class="settings-section-header">
+      <h3 class="settings-section-title">Notifications</h3>
+      <p class="settings-section-subtitle">
+        Control how and when you receive notifications
+      </p>
+    </div>
+    <div class="settings-section-body">
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Email Notifications</div>
+          <div class="setting-description">
+            Receive email updates about your account and diagrams
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch active" onclick="toggleSwitch(this)">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Push Notifications</div>
+          <div class="setting-description">
+            Get notified about important updates in your browser
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch" onclick="toggleSwitch(this)">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Marketing Communications</div>
+          <div class="setting-description">
+            Receive updates about new features and promotions
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch" onclick="toggleSwitch(this)">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Collaboration Alerts</div>
+          <div class="setting-description">
+            Get notified when someone shares a diagram with you
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch active" onclick="toggleSwitch(this)">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preferences Settings -->
+  <div class="settings-section">
+    <div class="settings-section-header">
+      <h3 class="settings-section-title">Preferences</h3>
+      <p class="settings-section-subtitle">
+        Customize your application experience
+      </p>
+    </div>
+    <div class="settings-section-body">
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Default Diagram View</div>
+          <div class="setting-description">
+            Choose the default view when opening diagrams
+          </div>
+        </div>
+        <div class="setting-control">
+          <select class="setting-select">
+            <option>Grid View</option>
+            <option>List View</option>
+            <option>Card View</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Auto-save Interval</div>
+          <div class="setting-description">
+            How often your work is automatically saved
+          </div>
+        </div>
+        <div class="setting-control">
+          <select class="setting-select">
+            <option>Every 30 seconds</option>
+            <option>Every 1 minute</option>
+            <option>Every 5 minutes</option>
+            <option>Manual save only</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Theme Preference</div>
+          <div class="setting-description">
+            Choose your preferred application theme
+          </div>
+        </div>
+        <div class="setting-control">
+          <select class="setting-select">
+            <option>Light</option>
+            <option>Dark</option>
+            <option>System</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Reduced Motion</div>
+          <div class="setting-description">
+            Minimize animations and transitions
+          </div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch" onclick="toggleSwitch(this)">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Settings -->
+  <div class="settings-section">
+    <div class="settings-section-header">
+      <h3 class="settings-section-title">Security</h3>
+      <p class="settings-section-subtitle">
+        Manage your account security and privacy
+      </p>
+    </div>
+    <div class="settings-section-body">
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Change Password</div>
+          <div class="setting-description">
+            Update your account password for better security
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn-secondary">Change Password</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Two-Factor Authentication</div>
+          <div class="setting-description">
+            Add an extra layer of security to your account
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn-primary">Enable 2FA</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Login Sessions</div>
+          <div class="setting-description">
+            View and manage your active login sessions
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn-secondary">Manage Sessions</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Data Export</div>
+          <div class="setting-description">
+            Download a copy of your account data
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn-secondary">Request Export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Danger Zone -->
+  <div class="settings-section danger-zone">
+    <div class="settings-section-header">
+      <h3 class="settings-section-title">Danger Zone</h3>
+      <p class="settings-section-subtitle">
+        Irreversible and destructive actions
+      </p>
+    </div>
+    <div class="settings-section-body">
+      <div class="setting-row">
+        <div class="setting-info">
+          <div class="setting-label">Delete Account</div>
+          <div class="setting-description">
+            Permanently delete your account and all associated data
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn-danger">Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Save Actions -->
+  <div class="setting-control">
+    <button class="btn-secondary">Cancel</button>
+    <button class="btn-primary">Save Changes</button>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<nav class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">AFM</div>
+    <div class="logo-text">AI Flow Mapper</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">General</div>
+    <button
+      class="nav-item active"
+      onclick="setActiveNav(this, 'Diagrams', 'Create and manage your AI flow diagrams')"
+    >
+      <i class="fas fa-project-diagram"></i>
+      Diagrams
+    </button>
+    <button
+      class="nav-item"
+      onclick="setActiveNav(this, 'Account', 'Manage your account settings and profile')"
+    >
+      <i class="fas fa-user"></i>
+      Account
+    </button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-title">Financial</div>
+    <button
+      class="nav-item has-submenu"
+      onclick="toggleSubmenu('finances', this)"
+    >
+      <i class="fas fa-wallet"></i>
+      Finances
+    </button>
+    <div class="nav-submenu" id="finances-submenu">
+      <button
+        class="nav-item"
+        onclick="setActiveNav(this, 'Current Plan', 'View and manage your subscription plan')"
+      >
+        <i class="fas fa-clipboard-list"></i>
+        Current Plan
+      </button>
+      <button
+        class="nav-item"
+        onclick="setActiveNav(this, 'Tax Details', 'Manage your tax information and documents')"
+      >
+        <i class="fas fa-file-invoice-dollar"></i>
+        Tax Details
+      </button>
+      <button
+        class="nav-item"
+        onclick="setActiveNav(this, 'Billing History', 'View your payment history and invoices')"
+      >
+        <i class="fas fa-receipt"></i>
+        Billing History
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <button
+      class="nav-item"
+      onclick="setActiveNav(this, 'Settings', 'Configure your application preferences')"
+    >
+      <i class="fas fa-cog"></i>
+      Settings
+    </button>
+  </div>
+</nav>

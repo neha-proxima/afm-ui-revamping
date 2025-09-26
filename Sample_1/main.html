@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Flow Mapper</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <script>
+      function loadHTML(id, file) {
+        fetch(file)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`HTTP error! status: ${response.status}`);
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((err) => console.error(`Failed to load ${file}: ${err}`));
+      }
+
+      // Dynamically load components
+      loadHTML("sidebar", "./sidebar.html");
+      loadHTML("header", "./header.html");
+      loadHTML("settings", "./settings.html");
+    </script>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-header">
+        <h1 class="content-title" id="pageTitle">Diagrams</h1>
+        <p class="content-description" id="pageDescription">
+          Create and manage your AI flow diagrams
+        </p>
+      </div>
+
+      <div class="content-body">
+        <!-- Settings -->
+        <div id="settings"></div>
+
+        <div class="placeholder-content" id="defaultContent">
+          <h3>Content Area</h3>
+          <p>
+            This is where the main content for the selected navigation item will
+            be displayed.
+          </p>
+          <p>The router view will replace this placeholder content.</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
