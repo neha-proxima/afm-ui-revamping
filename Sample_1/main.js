@@ -38,6 +38,8 @@ function setActiveNav(element, title, description) {
   if (title === "Settings") {
     settingsContent.style.display = "block";
     defaultContent.style.display = "none";
+  } else if (title === "Samples") {
+    window.location.href = "/"; // Replace with actual URL
   } else {
     settingsContent.style.display = "none";
     defaultContent.style.display = "block";
