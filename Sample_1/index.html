@@ -31,6 +31,8 @@
       loadHTML("sidebar", "/Sample_1/sidebar.html");
       loadHTML("header", "/Sample_1/header.html");
       loadHTML("settings", "/Sample_1/settings.html");
+      loadHTML("dashboard", "/Sample_1/dashboard.html");
+      loadHTML("diagrams", "/Sample_1/diagrams.html");
     </script>
   </head>
   <body>
@@ -43,15 +45,21 @@
     <!-- Main Content -->
     <main class="main-content">
       <div class="content-header">
-        <h1 class="content-title" id="pageTitle">Diagrams</h1>
+        <h1 class="content-title" id="pageTitle">Dashboard</h1>
         <p class="content-description" id="pageDescription">
-          Create and manage your AI flow diagrams
+          View all of your account related information at a glance.
         </p>
       </div>
 
       <div class="content-body">
+        <!-- Dashboard -->
+        <div id="dashboard"></div>
+
         <!-- Settings -->
         <div id="settings"></div>
+
+        <!-- Settings -->
+        <div id="diagrams"></div>
 
         <div class="placeholder-content" id="defaultContent">
           <h3>Content Area</h3>

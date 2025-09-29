@@ -1,0 +1,50 @@
+<div
+  class="content-body diagram-page"
+  id="diagramContent"
+  style="display: none"
+>
+  <div class="diagram-header">
+    <button class="btn-primary" onclick="createNewDiagram()">
+      <i class="fas fa-plus"></i> Create New Diagram
+    </button>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchDiagramTab('active')">
+      <i class="fas fa-project-diagram"></i>
+      Active Diagrams
+      <span class="tab-badge" id="activeCount">0</span>
+    </button>
+    <button class="tab" onclick="switchDiagramTab('archived')">
+      <i class="fas fa-project-diagram"></i>
+      Archived
+      <span class="tab-badge" id="archivedCount">0</span>
+    </button>
+  </div>
+
+  <div class="search-filter-bar">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search diagrams..."
+        oninput="filterDiagrams()"
+      />
+    </div>
+    <select class="filter-select" id="planFilter" onchange="filterDiagrams()">
+      <option value="all">All Plans</option>
+      <option value="free">Free</option>
+      <option value="pro">Pro</option>
+      <option value="enterprise">Enterprise</option>
+    </select>
+    <select class="filter-select" id="sortFilter" onchange="sortDiagrams()">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="name">Name (A-Z)</option>
+    </select>
+  </div>
+
+  <div id="diagramsContainer">
+    <!-- Diagrams will be rendered here -->
+  </div>
+</div>

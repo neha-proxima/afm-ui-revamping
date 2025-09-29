@@ -1,296 +1,1101 @@
-<div class="settings-container" id="settingsContent" style="display: none">
-  <!-- Profile Settings -->
-  <div class="settings-section">
-    <div class="settings-section-header">
-      <h3 class="settings-section-title">Profile</h3>
-      <p class="settings-section-subtitle">
-        Manage your profile information and avatar
-      </p>
-    </div>
-    <div class="settings-section-body">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Profile Picture</div>
-          <div class="setting-description">
-            Upload a new avatar or change your current one
+<div class="content-body" id="settingsContent" style="display: none">
+  <div class="settings-container">
+    <div class="tabs-container">
+      <div class="tabs-header">
+        <button class="tab-button active" onclick="switchTab('general')">
+          <i class="fas fa-user-circle"></i> General
+        </button>
+        <button class="tab-button" onclick="switchTab('authentication')">
+          <i class="fas fa-lock"></i> Authentication
+        </button>
+        <button class="tab-button" onclick="switchTab('billing')">
+          <i class="fas fa-credit-card"></i> Billing Information
+        </button>
+        <button class="tab-button" onclick="switchTab('invoices')">
+          <i class="fas fa-receipt"></i> Invoices
+        </button>
+        <button class="tab-button" onclick="switchTab('preferences')">
+          <i class="fas fa-sliders-h"></i> Preferences
+        </button>
+      </div>
+
+      <!-- General Tab -->
+      <div
+        class="tab-content active"
+        id="general-tab"
+      >
+        <div class="profile-header-section">
+          <div class="profile-avatar-container">
+            <div class="profile-avatar-large">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230066FF;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%237C3AED;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grad)'/%3E%3Ctext x='50' y='50' text-anchor='middle' dy='.3em' fill='white' font-size='36' font-weight='bold' font-family='Inter'%3ENS%3C/text%3E%3C/svg%3E"
+                alt="Profile"
+              />
+            </div>
+            <button class="avatar-upload-btn">
+              <i class="fas fa-camera"></i>
+            </button>
           </div>
-        </div>
-        <div class="setting-control">
-          <div class="avatar-upload">
-            <div class="current-avatar">FS</div>
-            <div class="avatar-controls">
-              <button class="btn-secondary">Upload New</button>
-              <button class="btn-secondary">Remove</button>
+          <div class="profile-header-info">
+            <h3 class="profile-user-name">Neha Soni</h3>
+            <p class="profile-user-email">nihalsoni36@gmail.com</p>
+            <div class="profile-badges">
+              <span class="profile-badge badge-verified">
+                <i class="fas fa-check-circle"></i>
+                Verified
+              </span>
+              <span class="profile-badge badge-pro">
+                <i class="fas fa-crown"></i>
+                Pro Member
+              </span>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Full Name</div>
-          <div class="setting-description">
-            Your full name as it appears on your profile
+        <div class="form-section">
+          <div class="section-header-modern">
+            <div>
+              <h2 class="section-title">
+                <i class="fas fa-user-circle"></i>
+                Personal Information
+              </h2>
+              <p class="section-description">
+                Update your personal details and how we can reach you
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="setting-control">
-          <input
-            type="text"
-            class="setting-input"
-            value="Florence Shaw"
-            placeholder="Enter your full name"
-          />
-        </div>
-      </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Email Address</div>
-          <div class="setting-description">
-            Your primary email address for account notifications
-          </div>
-        </div>
-        <div class="setting-control">
-          <input
-            type="email"
-            class="setting-input"
-            value="florence@untitledui.com"
-            placeholder="Enter your email"
-          />
-        </div>
-      </div>
+          <form class="modern-form">
+            <div class="form-row">
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-user"></i>
+                  Full Name <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input-modern"
+                  value="Neha Soni"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-building"></i>
+                  Organisation Name
+                </label>
+                <input
+                  type="text"
+                  class="form-input-modern"
+                  value="NSG"
+                  placeholder="Enter organisation name"
+                />
+              </div>
+            </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Time Zone</div>
-          <div class="setting-description">
-            Used for scheduling and date displays
-          </div>
+            <div class="form-row">
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-envelope"></i>
+                  Email Address <span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-input-modern"
+                  value="nihalsoni36@gmail.com"
+                  placeholder="you@example.com"
+                  required
+                />
+                <span class="input-hint">
+                  <i class="fas fa-info-circle"></i>
+                  We'll send important updates to this email
+                </span>
+              </div>
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-phone"></i>
+                  Phone Number
+                </label>
+                <div class="phone-input-modern">
+                  <select class="country-select">
+                    <option value="+91" selected>🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+61">🇦🇺 +61</option>
+                  </select>
+                  <input
+                    type="tel"
+                    class="form-input-modern phone-number-input"
+                    value="9000000000"
+                    placeholder="Phone number"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="setting-control">
-          <select class="setting-select">
-            <option>UTC-8 (Pacific Time)</option>
-            <option>UTC-5 (Eastern Time)</option>
-            <option>UTC+0 (GMT)</option>
-            <option>UTC+5:30 (India Standard Time)</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Notifications Settings -->
-  <div class="settings-section">
-    <div class="settings-section-header">
-      <h3 class="settings-section-title">Notifications</h3>
-      <p class="settings-section-subtitle">
-        Control how and when you receive notifications
-      </p>
-    </div>
-    <div class="settings-section-body">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Email Notifications</div>
-          <div class="setting-description">
-            Receive email updates about your account and diagrams
+        <div class="form-section">
+          <div class="section-header-modern">
+            <div>
+              <h2 class="section-title">
+                <i class="fas fa-map-marker-alt"></i>
+                Address Information
+              </h2>
+              <p class="section-description">
+                Manage your location and billing address
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="setting-control">
-          <div class="toggle-switch active" onclick="toggleSwitch(this)">
-            <div class="toggle-slider"></div>
-          </div>
-        </div>
-      </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Push Notifications</div>
-          <div class="setting-description">
-            Get notified about important updates in your browser
-          </div>
-        </div>
-        <div class="setting-control">
-          <div class="toggle-switch" onclick="toggleSwitch(this)">
-            <div class="toggle-slider"></div>
-          </div>
-        </div>
-      </div>
+          <form class="modern-form">
+            <div class="form-group-modern full-width">
+              <label class="form-label-modern">
+                <i class="fas fa-home"></i>
+                Street Address <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-input-modern"
+                value="Balewadi High Street"
+                placeholder="Enter your street address"
+                required
+              />
+            </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Marketing Communications</div>
-          <div class="setting-description">
-            Receive updates about new features and promotions
-          </div>
-        </div>
-        <div class="setting-control">
-          <div class="toggle-switch" onclick="toggleSwitch(this)">
-            <div class="toggle-slider"></div>
-          </div>
-        </div>
-      </div>
+            <div class="form-row">
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-city"></i>
+                  City <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input-modern"
+                  value="Pune"
+                  placeholder="Enter city"
+                  required
+                />
+              </div>
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-map-pin"></i>
+                  Zip / Postal Code <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input-modern"
+                  value="311001"
+                  placeholder="Enter zip code"
+                  required
+                />
+              </div>
+            </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Collaboration Alerts</div>
-          <div class="setting-description">
-            Get notified when someone shares a diagram with you
-          </div>
-        </div>
-        <div class="setting-control">
-          <div class="toggle-switch active" onclick="toggleSwitch(this)">
-            <div class="toggle-slider"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="form-row">
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-map"></i>
+                  State / Region <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input-modern"
+                  value="Maharashtra"
+                  placeholder="Enter state/region"
+                  required
+                />
+              </div>
+              <div class="form-group-modern">
+                <label class="form-label-modern">
+                  <i class="fas fa-globe"></i>
+                  Country <span class="required">*</span>
+                </label>
+                <select class="form-input-modern" required>
+                  <option value="IN" selected>India</option>
+                  <option value="US">United States</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                </select>
+              </div>
+            </div>
 
-  <!-- Preferences Settings -->
-  <div class="settings-section">
-    <div class="settings-section-header">
-      <h3 class="settings-section-title">Preferences</h3>
-      <p class="settings-section-subtitle">
-        Customize your application experience
-      </p>
-    </div>
-    <div class="settings-section-body">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Default Diagram View</div>
-          <div class="setting-description">
-            Choose the default view when opening diagrams
-          </div>
-        </div>
-        <div class="setting-control">
-          <select class="setting-select">
-            <option>Grid View</option>
-            <option>List View</option>
-            <option>Card View</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Auto-save Interval</div>
-          <div class="setting-description">
-            How often your work is automatically saved
-          </div>
-        </div>
-        <div class="setting-control">
-          <select class="setting-select">
-            <option>Every 30 seconds</option>
-            <option>Every 1 minute</option>
-            <option>Every 5 minutes</option>
-            <option>Manual save only</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Theme Preference</div>
-          <div class="setting-description">
-            Choose your preferred application theme
-          </div>
-        </div>
-        <div class="setting-control">
-          <select class="setting-select">
-            <option>Light</option>
-            <option>Dark</option>
-            <option>System</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Security Settings -->
-  <div class="settings-section">
-    <div class="settings-section-header">
-      <h3 class="settings-section-title">Security</h3>
-      <p class="settings-section-subtitle">
-        Manage your account security and privacy
-      </p>
-    </div>
-    <div class="settings-section-body">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Change Password</div>
-          <div class="setting-description">
-            Update your account password for better security
-          </div>
-        </div>
-        <div class="setting-control">
-          <button class="btn-secondary">Change Password</button>
+            <div class="form-actions-modern">
+              <button type="button" class="btn-modern btn-outline">
+                <i class="fas fa-times"></i>
+                Discard Changes
+              </button>
+              <button type="submit" class="btn-modern btn-gradient">
+                <i class="fas fa-check"></i>
+                Save Changes
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Two-Factor Authentication</div>
-          <div class="setting-description">
+      <!-- Authentication Tab -->
+      <div class="tab-content" id="authentication-tab">
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-shield-alt"></i>
+            Sign-in Methods
+          </h2>
+          <p class="section-description">
+            Manage how you sign in to your account
+          </p>
+
+          <div class="auth-method-card">
+            <div class="auth-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="auth-info">
+              <div class="auth-title">Email & Password</div>
+              <div class="auth-status">
+                nihalsoni36@gmail.com
+                <span class="status-badge status-active">Active</span>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-small">Change Password</button>
+          </div>
+
+          <div class="auth-method-card">
+            <div class="auth-icon">
+              <i class="fab fa-google"></i>
+            </div>
+            <div class="auth-info">
+              <div class="auth-title">Google Account</div>
+              <div class="auth-status">
+                Not connected
+                <span class="status-badge status-inactive">Inactive</span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-small">Connect</button>
+          </div>
+
+          <div class="auth-method-card">
+            <div class="auth-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="auth-info">
+              <div class="auth-title">GitHub Account</div>
+              <div class="auth-status">
+                Not connected
+                <span class="status-badge status-inactive">Inactive</span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-small">Connect</button>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-key"></i>
+            Two-Factor Authentication
+          </h2>
+          <p class="section-description">
             Add an extra layer of security to your account
+          </p>
+
+          <div class="auth-method-card">
+            <div class="auth-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="auth-info">
+              <div class="auth-title">Authenticator App</div>
+              <div class="auth-status">
+                Use an app to generate verification codes
+                <span class="status-badge status-inactive">Not Enabled</span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-small">Enable</button>
           </div>
-        </div>
-        <div class="setting-control">
-          <button class="btn-primary">Enable 2FA</button>
         </div>
       </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Login Sessions</div>
-          <div class="setting-description">
-            View and manage your active login sessions
+      <!-- Billing Information Tab -->
+      <div class="tab-content" id="billing-tab">
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-crown"></i>
+            Current Subscription
+          </h2>
+
+          <div class="current-plan-banner">
+            <div class="plan-badge">
+              <i class="fas fa-star"></i>
+              BASIC PLAN
+            </div>
+            <div class="plan-details-row">
+              <div class="plan-info-group">
+                <div class="plan-main-info">
+                  <div class="plan-name-large">Basic Plan</div>
+                  <div class="plan-price-large">$9.00<span>/month</span></div>
+                </div>
+                <div class="plan-status-info">
+                  <div class="status-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Next billing: <strong>Oct 01, 2025</strong></span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Auto-renewal: <strong>Enabled</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="plan-usage-group">
+                <div class="usage-card">
+                  <div class="usage-label">Team Members</div>
+                  <div class="usage-value">4 <span>/ 10</span></div>
+                  <div class="usage-bar">
+                    <div class="usage-bar-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+                <div class="usage-card">
+                  <div class="usage-label">Storage Used</div>
+                  <div class="usage-value">45GB <span>/ 200GB</span></div>
+                  <div class="usage-bar">
+                    <div class="usage-bar-fill" style="width: 22.5%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="plan-actions">
+              <button class="btn btn-secondary">
+                <i class="fas fa-times-circle"></i>
+                Cancel Subscription
+              </button>
+              <button class="btn btn-primary">
+                <i class="fas fa-arrow-up"></i>
+                Upgrade Plan
+              </button>
+            </div>
           </div>
         </div>
-        <div class="setting-control">
-          <button class="btn-secondary">Manage Sessions</button>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-th-large"></i>
+            Available Plans
+          </h2>
+          <p class="section-description">
+            Choose the plan that best fits your needs
+          </p>
+
+          <div class="plans-grid">
+            <div class="plan-card-modern">
+              <div class="plan-card-header">
+                <div
+                  class="plan-icon"
+                  style="background: linear-gradient(135deg, #3b82f6, #2563eb)"
+                >
+                  <i class="fas fa-box"></i>
+                </div>
+                <div>
+                  <div class="plan-name">Basic Plan</div>
+                  <div class="plan-subtitle">For small teams</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount">9</span>
+                <span class="plan-period">/month</span>
+              </div>
+              <ul class="plan-features-modern">
+                <li><i class="fas fa-check"></i> Up to 10 team members</li>
+                <li><i class="fas fa-check"></i> 20GB per user</li>
+                <li><i class="fas fa-check"></i> Basic templates</li>
+                <li><i class="fas fa-check"></i> Email support</li>
+                <li><i class="fas fa-check"></i> Basic analytics</li>
+              </ul>
+              <div class="plan-card-footer">
+                <div class="current-plan-tag">
+                  <i class="fas fa-check-circle"></i>
+                  Current Plan
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-card-modern popular">
+              <div class="popular-badge">
+                <i class="fas fa-fire"></i>
+                Most Popular
+              </div>
+              <div class="plan-card-header">
+                <div
+                  class="plan-icon"
+                  style="background: linear-gradient(135deg, #8b5cf6, #7c3aed)"
+                >
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div>
+                  <div class="plan-name">Business Plan</div>
+                  <div class="plan-subtitle">For growing teams</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount">19</span>
+                <span class="plan-period">/month</span>
+              </div>
+              <ul class="plan-features-modern">
+                <li><i class="fas fa-check"></i> Up to 20 team members</li>
+                <li><i class="fas fa-check"></i> 40GB per user</li>
+                <li><i class="fas fa-check"></i> Advanced templates</li>
+                <li><i class="fas fa-check"></i> Priority support</li>
+                <li><i class="fas fa-check"></i> Collaboration tools</li>
+                <li><i class="fas fa-check"></i> Advanced analytics</li>
+              </ul>
+              <div class="plan-card-footer">
+                <button class="btn btn-primary" style="width: 100%">
+                  Upgrade to Business
+                </button>
+              </div>
+            </div>
+
+            <div class="plan-card-modern">
+              <div class="plan-card-header">
+                <div
+                  class="plan-icon"
+                  style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+                >
+                  <i class="fas fa-building"></i>
+                </div>
+                <div>
+                  <div class="plan-name">Enterprise Plan</div>
+                  <div class="plan-subtitle">For large organizations</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <span class="plan-currency">$</span>
+                <span class="plan-amount">29</span>
+                <span class="plan-period">/month</span>
+              </div>
+              <ul class="plan-features-modern">
+                <li><i class="fas fa-check"></i> Unlimited members</li>
+                <li><i class="fas fa-check"></i> 50GB per user</li>
+                <li><i class="fas fa-check"></i> All premium templates</li>
+                <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                <li><i class="fas fa-check"></i> Advanced security</li>
+                <li><i class="fas fa-check"></i> Custom integrations</li>
+                <li><i class="fas fa-check"></i> SSO & SAML</li>
+              </ul>
+              <div class="plan-card-footer">
+                <button class="btn btn-secondary" style="width: 100%">
+                  Upgrade to Enterprise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-credit-card"></i>
+            Payment Method
+          </h2>
+          <p class="section-description">Update your payment card details</p>
+
+          <div class="card-info">
+            <div class="card-details">
+              <div class="card-brand">VISA</div>
+              <div class="card-number">•••• •••• •••• 5432</div>
+            </div>
+            <div class="card-meta">
+              <div><strong>Name:</strong> Anna Taylor</div>
+              <div><strong>Expires:</strong> 05/27</div>
+            </div>
+          </div>
+
+          <form>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label class="form-label"
+                  >Name on card <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  value="Anna Taylor"
+                  required
+                />
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label"
+                  >Card number <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="1234 5678 9876 5432"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >Expiration Date <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="MM/YY"
+                  value="05/27"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >CVV <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="•••"
+                  maxlength="3"
+                  required
+                />
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label"
+                  >Billing Address <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  value="Beyond Avenue 46"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">
+                Update Payment Method
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Data Export</div>
-          <div class="setting-description">
-            Download a copy of your account data
+      <!-- Invoices Tab -->
+      <div class="tab-content" id="invoices-tab">
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-file-invoice"></i>
+            Billing History
+          </h2>
+          <p class="section-description">
+            View and download your past invoices
+          </p>
+
+          <table class="invoice-table">
+            <thead>
+              <tr>
+                <th>Invoice ID</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#INV-2025-001</strong></td>
+                <td>Sep 01, 2025</td>
+                <td>$9.00</td>
+                <td><span class="invoice-status status-paid">Paid</span></td>
+                <td>
+                  <button class="btn-link">
+                    <i class="fas fa-download"></i> Download
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#INV-2025-002</strong></td>
+                <td>Aug 01, 2025</td>
+                <td>$9.00</td>
+                <td><span class="invoice-status status-paid">Paid</span></td>
+                <td>
+                  <button class="btn-link">
+                    <i class="fas fa-download"></i> Download
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#INV-2025-003</strong></td>
+                <td>Jul 01, 2025</td>
+                <td>$9.00</td>
+                <td><span class="invoice-status status-paid">Paid</span></td>
+                <td>
+                  <button class="btn-link">
+                    <i class="fas fa-download"></i> Download
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#INV-2025-004</strong></td>
+                <td>Jun 01, 2025</td>
+                <td>$9.00</td>
+                <td><span class="invoice-status status-paid">Paid</span></td>
+                <td>
+                  <button class="btn-link">
+                    <i class="fas fa-download"></i> Download
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#INV-2025-005</strong></td>
+                <td>May 01, 2025</td>
+                <td>$9.00</td>
+                <td><span class="invoice-status status-paid">Paid</span></td>
+                <td>
+                  <button class="btn-link">
+                    <i class="fas fa-download"></i> Download
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-file-alt"></i>
+            Tax Information
+          </h2>
+          <p class="section-description">
+            Manage your tax details and documents
+          </p>
+
+          <form>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Tax ID / VAT Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter your tax ID"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tax Country</label>
+                <select class="form-select">
+                  <option>India</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Business Name (for invoices)</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter business name"
+                />
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">
+                Save Tax Details
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Preferences Tab -->
+      <div class="tab-content" id="preferences-tab">
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-palette"></i>
+            Appearance
+          </h2>
+          <p class="section-description">
+            Customize the look and feel of your workspace
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Theme</label>
+            <select class="form-select">
+              <option>Light Mode</option>
+              <option>Dark Mode</option>
+              <option>Auto (System)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Language</label>
+            <select class="form-select">
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Hindi</option>
+            </select>
           </div>
         </div>
-        <div class="setting-control">
-          <button class="btn-secondary">Request Export</button>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-bell"></i>
+            Notifications
+          </h2>
+          <p class="section-description">
+            Control what notifications you receive
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="font-weight: 500; color: #111827; margin-bottom: 4px"
+                >
+                  Email Notifications
+                </div>
+                <div style="font-size: 13px; color: #6b7280">
+                  Receive updates via email
+                </div>
+              </div>
+              <label
+                style="
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                "
+              >
+                <input
+                  type="checkbox"
+                  checked
+                  style="opacity: 0; width: 0; height: 0"
+                />
+                <span
+                  style="
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #0066ff;
+                    transition: 0.2s;
+                    border-radius: 24px;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                  "
+                >
+                  <span
+                    style="
+                      position: absolute;
+                      content: '';
+                      height: 20px;
+                      width: 20px;
+                      right: 2px;
+                      background-color: white;
+                      transition: 0.2s;
+                      border-radius: 50%;
+                    "
+                  ></span>
+                </span>
+              </label>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="font-weight: 500; color: #111827; margin-bottom: 4px"
+                >
+                  Push Notifications
+                </div>
+                <div style="font-size: 13px; color: #6b7280">
+                  Receive push notifications in browser
+                </div>
+              </div>
+              <label
+                style="
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                "
+              >
+                <input
+                  type="checkbox"
+                  style="opacity: 0; width: 0; height: 0"
+                />
+                <span
+                  style="
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #e5e7eb;
+                    transition: 0.2s;
+                    border-radius: 24px;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                  "
+                >
+                  <span
+                    style="
+                      position: absolute;
+                      content: '';
+                      height: 20px;
+                      width: 20px;
+                      left: 2px;
+                      background-color: white;
+                      transition: 0.2s;
+                      border-radius: 50%;
+                    "
+                  ></span>
+                </span>
+              </label>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="font-weight: 500; color: #111827; margin-bottom: 4px"
+                >
+                  Weekly Reports
+                </div>
+                <div style="font-size: 13px; color: #6b7280">
+                  Get weekly usage reports
+                </div>
+              </div>
+              <label
+                style="
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                "
+              >
+                <input
+                  type="checkbox"
+                  checked
+                  style="opacity: 0; width: 0; height: 0"
+                />
+                <span
+                  style="
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #0066ff;
+                    transition: 0.2s;
+                    border-radius: 24px;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                  "
+                >
+                  <span
+                    style="
+                      position: absolute;
+                      content: '';
+                      height: 20px;
+                      width: 20px;
+                      right: 2px;
+                      background-color: white;
+                      transition: 0.2s;
+                      border-radius: 50%;
+                    "
+                  ></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2 class="section-title">
+            <i class="fas fa-shield-alt"></i>
+            Privacy & Security
+          </h2>
+          <p class="section-description">
+            Manage your privacy and security settings
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="font-weight: 500; color: #111827; margin-bottom: 4px"
+                >
+                  Profile Visibility
+                </div>
+                <div style="font-size: 13px; color: #6b7280">
+                  Make your profile visible to others
+                </div>
+              </div>
+              <label
+                style="
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                "
+              >
+                <input
+                  type="checkbox"
+                  checked
+                  style="opacity: 0; width: 0; height: 0"
+                />
+                <span
+                  style="
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #0066ff;
+                    transition: 0.2s;
+                    border-radius: 24px;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                  "
+                >
+                  <span
+                    style="
+                      position: absolute;
+                      content: '';
+                      height: 20px;
+                      width: 20px;
+                      right: 2px;
+                      background-color: white;
+                      transition: 0.2s;
+                      border-radius: 50%;
+                    "
+                  ></span>
+                </span>
+              </label>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="font-weight: 500; color: #111827; margin-bottom: 4px"
+                >
+                  Show Activity Status
+                </div>
+                <div style="font-size: 13px; color: #6b7280">
+                  Let others see when you're active
+                </div>
+              </div>
+              <label
+                style="
+                  position: relative;
+                  display: inline-block;
+                  width: 48px;
+                  height: 24px;
+                "
+              >
+                <input
+                  type="checkbox"
+                  checked
+                  style="opacity: 0; width: 0; height: 0"
+                />
+                <span
+                  style="
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #0066ff;
+                    transition: 0.2s;
+                    border-radius: 24px;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                  "
+                >
+                  <span
+                    style="
+                      position: absolute;
+                      content: '';
+                      height: 20px;
+                      width: 20px;
+                      right: 2px;
+                      background-color: white;
+                      transition: 0.2s;
+                      border-radius: 50%;
+                    "
+                  ></span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-group" style="margin-top: 24px">
+            <button class="btn btn-secondary">Export My Data</button>
+            <button class="btn" style="background: #ef4444; color: white">
+              Delete Account
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Danger Zone -->
-  <div class="settings-section danger-zone">
-    <div class="settings-section-header">
-      <h3 class="settings-section-title">Danger Zone</h3>
-      <p class="settings-section-subtitle">
-        Irreversible and destructive actions
-      </p>
-    </div>
-    <div class="settings-section-body">
-      <div class="setting-row">
-        <div class="setting-info">
-          <div class="setting-label">Delete Account</div>
-          <div class="setting-description">
-            Permanently delete your account and all associated data
-          </div>
-        </div>
-        <div class="setting-control">
-          <button class="btn-danger">Delete Account</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Save Actions -->
-  <div class="setting-control">
-    <button class="btn-secondary">Cancel</button>
-    <button class="btn-primary">Save Changes</button>
   </div>
 </div>

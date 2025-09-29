@@ -1,12 +1,4 @@
 <header class="header">
-  <!-- Left side: user info -->
-  <div class="header-left">
-    <div class="user-info">
-      <div class="user-name">Hey, Neha!</div>
-      <div class="user-email">user@example.com</div>
-    </div>
-  </div>
-
   <!-- Right side: existing content -->
   <div class="header-right">
     <div class="search-container">
@@ -25,6 +17,19 @@
     <div class="profile-dropdown">
       <div class="profile-button" onclick="toggleProfileDropdown()">NS</div>
       <div class="dropdown-menu" id="profileDropdown">
+        <div class="dropdown-item">
+          <div>
+            <div>Neha Soni</div>
+            <div style="font-size: 12px; font-weight: 400">
+              nehas@proximabiz.com
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" onclick="openSettings()">
+          <i class="fas fa-clipboard-list profile-dropdown-icon"></i>
+          Dashboard
+        </button>
         <button class="dropdown-item" onclick="openSettings()">
           <i class="fas fa-cog profile-dropdown-icon"></i>
           Settings

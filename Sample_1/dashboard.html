@@ -1,0 +1,291 @@
+<div class="content-body" id="dashboardContent">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <span class="stat-card-title">Total Diagrams</span>
+        <div class="stat-icon" style="background: #e0effe; color: #0066ff">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+      </div>
+      <div class="stat-value">124</div>
+      <div class="stat-label">All time created</div>
+      <div class="stat-badge badge-success">
+        <span>↑</span> 12% from last month
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <span class="stat-card-title">Active Diagrams</span>
+        <div class="stat-icon" style="background: #d1fae5; color: #10b981">
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+      <div class="stat-value">89</div>
+      <div class="stat-label">Currently in use</div>
+      <div class="stat-badge badge-success"><span>↑</span> 8 new this week</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <span class="stat-card-title">Archived</span>
+        <div class="stat-icon" style="background: #f3f4f6; color: #6b7280">
+          <i class="fas fa-archive"></i>
+        </div>
+      </div>
+      <div class="stat-value">35</div>
+      <div class="stat-label">Stored safely</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <span class="stat-card-title">Shared Diagrams</span>
+        <div class="stat-icon" style="background: #ede9fe; color: #7c3aed">
+          <i class="fas fa-users"></i>
+        </div>
+      </div>
+      <div class="stat-value">23</div>
+      <div class="stat-label">Collaborative projects</div>
+      <div class="stat-badge badge-warning">
+        <span>⚡</span> 3 pending invitations
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Recent Activity</h2>
+        <a href="#" class="card-link">View All →</a>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-icon" style="background: #e0effe; color: #0066ff">
+          <i class="fas fa-plus-circle"></i>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Created diagram "Project Roadmap Q4"</div>
+          <div class="activity-time">2 hours ago</div>
+        </div>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-icon" style="background: #ede9fe; color: #7c3aed">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Shared "Team Workflow" with John Doe</div>
+          <div class="activity-time">5 hours ago</div>
+        </div>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-icon" style="background: #d1fae5; color: #10b981">
+          <i class="fas fa-history"></i>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">
+            Restored version 3 of "App Architecture"
+          </div>
+          <div class="activity-time">Yesterday at 3:45 PM</div>
+        </div>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-icon" style="background: #fef3c7; color: #f59e0b">
+          <i class="fas fa-file-export"></i>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Exported "API Flow Diagram" to PNG</div>
+          <div class="activity-time">Yesterday at 11:20 AM</div>
+        </div>
+      </div>
+
+      <div class="activity-item">
+        <div class="activity-icon" style="background: #e0effe; color: #0066ff">
+          <i class="fas fa-edit"></i>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Updated "Database Schema v2"</div>
+          <div class="activity-time">2 days ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Account</h2>
+        </div>
+        <div class="account-info">
+          <div class="info-row">
+            <span class="info-label">Current Plan</span>
+            <span class="plan-badge">PRO</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Last Password Change</span>
+            <span class="info-value">Aug 15, 2025</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Next Billing</span>
+            <span class="info-value">Oct 28, 2025</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Last Login</span>
+            <span class="info-value">Today, 9:23 AM</span>
+          </div>
+        </div>
+        <button
+          class="btn-primary"
+          style="width: 100%; margin-top: 16px; justify-content: center"
+        >
+          <i class="fas fa-cog"></i> Manage Account
+        </button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Quick Actions</h2>
+        </div>
+        <div class="quick-actions">
+          <button class="action-btn" onclick="alert('Create new diagram')">
+            <div
+              class="action-icon"
+              style="background: #e0effe; color: #0066ff"
+            >
+              <i class="fas fa-plus"></i>
+            </div>
+            <span>New Diagram</span>
+          </button>
+          <button class="action-btn" onclick="alert('Browse diagrams')">
+            <div
+              class="action-icon"
+              style="background: #d1fae5; color: #10b981"
+            >
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <span>Browse All</span>
+          </button>
+          <button class="action-btn" onclick="alert('Export diagram')">
+            <div
+              class="action-icon"
+              style="background: #fef3c7; color: #f59e0b"
+            >
+              <i class="fas fa-download"></i>
+            </div>
+            <span>Export</span>
+          </button>
+          <button class="action-btn" onclick="alert('Security settings')">
+            <div
+              class="action-icon"
+              style="background: #fee2e2; color: #ef4444"
+            >
+              <i class="fas fa-lock"></i>
+            </div>
+            <span>Security</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Recent Collaborators</h2>
+        <a href="#" class="card-link">View Team →</a>
+      </div>
+
+      <div class="collab-item">
+        <div class="avatar">JD</div>
+        <div class="collab-info">
+          <div class="collab-name">John Doe</div>
+          <div class="collab-action">Updated "Team Workflow" 3 hours ago</div>
+        </div>
+      </div>
+
+      <div class="collab-item">
+        <div class="avatar" style="background: #10b981">NS</div>
+        <div class="collab-info">
+          <div class="collab-name">Neha Sharma</div>
+          <div class="collab-action">
+            Commented on "API Architecture" yesterday
+          </div>
+        </div>
+      </div>
+
+      <div class="collab-item">
+        <div class="avatar" style="background: #f59e0b">MP</div>
+        <div class="collab-info">
+          <div class="collab-name">Michael Park</div>
+          <div class="collab-action">Shared "Database Design" 2 days ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Most Active Diagram</h2>
+      </div>
+      <div style="text-align: center; padding: 24px">
+        <div style="font-size: 48px; margin-bottom: 16px; color: #0066ff">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+          "
+        >
+          Project Roadmap Q4
+        </div>
+        <div style="font-size: 14px; color: #6b7280; margin-bottom: 16px">
+          Edited 47 times this month
+        </div>
+        <button class="btn-primary" style="justify-content: center">
+          Open Diagram <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="insight-title">
+        <i class="fas fa-bullseye"></i> Monthly Goal Progress
+      </div>
+      <div class="insight-text">
+        You're at 7 out of 10 diagrams this month. Keep up the great work!
+      </div>
+      <div
+        style="
+          background: #0066ff;
+          height: 8px;
+          border-radius: 4px;
+          margin-top: 12px;
+          width: 70%;
+        "
+      ></div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-title">
+        <i class="fas fa-lightbulb"></i> AI Insight
+      </div>
+      <div class="insight-text">
+        You've created 5 project workflow diagrams this month. Consider using
+        templates to save time.
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-title"><i class="fas fa-star"></i> What's New</div>
+      <div class="insight-text">
+        New feature: Auto-save is now enabled by default. Your work is always
+        protected!
+      </div>
+    </div>
+  </div>
+</div>
