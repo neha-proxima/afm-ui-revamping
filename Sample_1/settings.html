@@ -2,19 +2,19 @@
   <div class="settings-container">
     <div class="tabs-container">
       <div class="tabs-header">
-        <button class="tab-button active" onclick="switchTab('general')">
+        <button class="tab-button active" onclick="switchSettingsTab('general')">
           <i class="fas fa-user-circle"></i> General
         </button>
-        <button class="tab-button" onclick="switchTab('authentication')">
+        <button class="tab-button" onclick="switchSettingsTab('authentication')">
           <i class="fas fa-lock"></i> Authentication
         </button>
-        <button class="tab-button" onclick="switchTab('billing')">
+        <button class="tab-button" onclick="switchSettingsTab('billing')">
           <i class="fas fa-credit-card"></i> Billing Information
         </button>
-        <button class="tab-button" onclick="switchTab('invoices')">
+        <button class="tab-button" onclick="switchSettingsTab('invoices')">
           <i class="fas fa-receipt"></i> Invoices
         </button>
-        <button class="tab-button" onclick="switchTab('preferences')">
+        <button class="tab-button" onclick="switchSettingsTab('preferences')">
           <i class="fas fa-sliders-h"></i> Preferences
         </button>
       </div>
@@ -367,7 +367,7 @@
                 <i class="fas fa-times-circle"></i>
                 Cancel Subscription
               </button>
-              <button class="btn btn-primary">
+              <button class="btn btn-primary" onclick="openPlanUpgradeModal()">
                 <i class="fas fa-arrow-up"></i>
                 Upgrade Plan
               </button>

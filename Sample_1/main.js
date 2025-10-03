@@ -1,3 +1,6 @@
+let currentStep = 1;
+const totalSteps = 5;
+
 // Profile dropdown functionality
 function toggleProfileDropdown() {
   const dropdown = document.getElementById("profileDropdown");
@@ -101,7 +104,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-function switchTab(tabName) {
+function switchSettingsTab(tabName) {
   document
     .querySelectorAll(".tab-button")
     .forEach((btn) => btn.classList.remove("active"));
@@ -427,7 +430,11 @@ function openDiagram(diagramId) {
 }
 
 function createNewDiagram() {
-  alert("Create new diagram functionality");
+  document.getElementById("diagram_canvas").style.display = "block";
+  document.getElementById("diagramContent").style.display = "none";
+  document.getElementById("pageTitle").textContent = "Diagram Canvas";
+  document.getElementById("pageDescription").textContent =
+    "Create and edit your diagrams here.";
 }
 
 // Initialize on page load
@@ -435,3 +442,170 @@ function createNewDiagram() {
 
 // To test empty state, uncomment this:
 // diagrams = [];
+
+// Modal Functions
+function openEditModal() {
+  document.getElementById("editModal").classList.add("active");
+}
+
+function closeEditModal() {
+  document.getElementById("editModal").classList.remove("active");
+}
+
+function openVersionsModal() {
+  document.getElementById("versionsModal").classList.add("active");
+}
+
+function closeVersionsModal() {
+  document.getElementById("versionsModal").classList.remove("active");
+}
+
+function openPlanUpgradeModal() {
+  document.getElementById("planUpgrade").classList.add("active");
+}
+
+function closePlanUpgradeModal() {
+  document.getElementById("planUpgrade").classList.remove("active");
+}
+// Tab Switching
+function switchTab(tabId) {
+  document
+    .querySelectorAll(".modal-tab")
+    .forEach((tab) => tab.classList.remove("active"));
+  document
+    .querySelectorAll(".modal-tab-content")
+    .forEach((content) => content.classList.remove("active"));
+
+  event.target.classList.add("active");
+  document.getElementById(tabId).classList.add("active");
+}
+
+// Export Menu
+function toggleExportMenu() {
+  const menu = document.getElementById("exportMenu");
+  menu.classList.toggle("active");
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".toolbar-btn-group")) {
+    document.getElementById("exportMenu").classList.remove("active");
+  }
+});
+
+// Close modals when clicking overlay
+document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+  overlay.addEventListener("click", function (e) {
+    if (e.target === this) {
+      this.classList.remove("active");
+    }
+  });
+});
+
+// Action Functions
+function submitMindmap() {
+  const topic = document.getElementById("mindmapTopic").value;
+  const details = document.getElementById("ideaDetails").value;
+  console.log("Creating mindmap:", { topic, details });
+  alert("Mindmap creation initiated!");
+  closeEditModal();
+}
+
+function saveMindmap() {
+  alert("Mindmap saved successfully!");
+}
+
+function exportImage() {
+  alert("Exporting as Image...");
+}
+
+function exportPDF() {
+  alert("Exporting as PDF...");
+}
+
+function exportJSON() {
+  alert("Exporting as JSON...");
+}
+
+function shareModal() {
+  alert("Share functionality coming soon!");
+}
+
+function restoreVersion(versionNumber) {
+  if (
+    confirm(
+      `Are you sure you want to restore Version ${versionNumber}? Current changes will be saved as a new version.`
+    )
+  ) {
+    alert(`Restored to Version ${versionNumber}`);
+    closeVersionsModal();
+  }
+}
+
+// Character counter
+document.getElementById("mindmapTopic").addEventListener("input", function () {
+  const remaining = 60 - this.value.length;
+  this.nextElementSibling.textContent = `${remaining} characters left.`;
+});
+
+function updateStepIndicator() {
+  for (let i = 1; i <= totalSteps; i++) {
+    const stepItem = document.getElementById(`step${i}Item`);
+    const circle = document.getElementById(`step${i}Circle`);
+    const label = document.getElementById(`step${i}Label`);
+
+    // Remove all classes first
+    stepItem.classList.remove("completed", "active", "inactive");
+    circle.classList.remove("completed", "active", "inactive");
+    label.classList.remove("completed", "active", "inactive");
+
+    // Add appropriate class
+    if (i < currentStep) {
+      stepItem.classList.add("completed");
+      circle.classList.add("completed");
+      label.classList.add("completed");
+    } else if (i === currentStep) {
+      stepItem.classList.add("active");
+      circle.classList.add("active");
+      label.classList.add("active");
+    } else {
+      stepItem.classList.add("inactive");
+      circle.classList.add("inactive");
+      label.classList.add("inactive");
+    }
+  }
+
+  // Hide/show step content
+  for (let i = 1; i <= totalSteps; i++) {
+    const content = document.getElementById(`step${i}`);
+    content.className =
+      i === currentStep ? "step-content active" : "step-content";
+  }
+}
+
+function nextStep() {
+  if (currentStep < totalSteps) {
+    currentStep++;
+    updateStepIndicator();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    currentStep--;
+    updateStepIndicator();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function goBack() {
+  window.history.back();
+}
+
+function completeCheckout() {
+  alert("Purchase completed successfully! Thank you for your order.");
+}
+
+// Initialize
+updateStepIndicator();

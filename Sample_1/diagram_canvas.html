@@ -1,0 +1,219 @@
+<div class="editor-container">
+  <!-- Toolbar -->
+  <div class="editor-toolbar">
+    <div class="editor-toolbar-left">
+      <div class="editor-title">
+        <i class="fas fa-project-diagram"></i>
+        <span>Untitled Mindmap</span>
+      </div>
+      <div class="editor-status">
+        <span class="status-dot"></span>
+        <span>All changes saved</span>
+      </div>
+    </div>
+
+    <div class="editor-toolbar-right">
+      <button class="toolbar-btn" onclick="openEditModal()">
+        <i class="fas fa-info-circle"></i>
+        <span>Edit Info</span>
+      </button>
+
+      <button class="toolbar-btn" onclick="openVersionsModal()">
+        <i class="fas fa-history"></i>
+        <span>Versions</span>
+      </button>
+
+      <div class="toolbar-btn-group">
+        <button class="toolbar-btn" onclick="toggleExportMenu()">
+          <i class="fas fa-download"></i>
+          <span>Export</span>
+          <i
+            class="fas fa-chevron-down"
+            style="font-size: 12px; margin-left: -4px"
+          ></i>
+        </button>
+        <div class="dropdown-menu" id="exportMenu">
+          <button class="dropdown-item" onclick="exportImage()">
+            <i class="fas fa-image"></i> Export as Image
+          </button>
+          <button class="dropdown-item" onclick="exportPDF()">
+            <i class="fas fa-file-pdf"></i> Export as PDF
+          </button>
+        </div>
+      </div>
+
+      <button class="toolbar-btn" onclick="exportJSON()">
+        <i class="fas fa-code"></i>
+        <span>Export JSON</span>
+      </button>
+
+      <button class="toolbar-btn" onclick="shareModal()">
+        <i class="fas fa-share-alt"></i>
+        <span>Share</span>
+      </button>
+
+      <button class="toolbar-btn toolbar-btn-primary" onclick="saveMindmap()">
+        <i class="fas fa-save"></i>
+        <span>Save</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Canvas Area -->
+  <div class="editor-canvas-wrapper">
+    <div class="editor-canvas" id="canvas">
+      <div class="canvas-content">
+        <div class="canvas-placeholder">
+          <i class="fas fa-project-diagram"></i>
+          <h3>Your mindmap canvas</h3>
+          <p>
+            Start creating your mindmap here. The canvas is ready for your
+            ideas!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Info Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Create Mindmap With AI Magic</h2>
+      <button class="modal-close" onclick="closeEditModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchTab('dataTab')">
+          Data Driven
+        </button>
+        <button class="modal-tab" onclick="switchTab('jsonTab')">
+          From JSON
+        </button>
+      </div>
+
+      <!-- Data Driven Tab -->
+      <div class="modal-tab-content active" id="dataTab">
+        <div class="form-group">
+          <label class="form-label">I would like to create a mindmap on</label>
+          <input
+            type="text"
+            class="form-input"
+            id="mindmapTopic"
+            placeholder="Enter your topic..."
+          />
+          <div class="char-count">60 characters left.</div>
+          <div class="form-hint">
+            Here are some keywords in the form of examples-
+            <ul>
+              <li>Software Development Life Cycle (SDLC)</li>
+              <li>Blockchain Technology</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="moreDetails" />
+          <label for="moreDetails">I have more details</label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Explain your idea in everyday terms</label>
+          <textarea
+            class="form-textarea"
+            id="ideaDetails"
+            placeholder="Describe your mindmap..."
+          ></textarea>
+          <div class="form-hint">
+            For example- I want to visualize the key concepts of blockchain.
+            Start with a central node labeled 'Blockchain Technology' and branch
+            out to 'Decentralization,' 'Immutable Ledger,' and 'Cryptographic
+            Security.'
+          </div>
+        </div>
+      </div>
+
+      <!-- From JSON Tab -->
+      <div class="modal-tab-content" id="jsonTab">
+        <div class="form-group">
+          <label class="form-label">Enter your JSON Data</label>
+          <textarea
+            class="form-textarea"
+            id="jsonData"
+            placeholder='{"name": "Root", "children": [...]}'
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-primary" onclick="submitMindmap()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- Versions Modal -->
+<div class="modal-overlay" id="versionsModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Version History</h2>
+      <button class="modal-close" onclick="closeVersionsModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="versions-list">
+        <div class="version-item">
+          <div class="version-info">
+            <h4>Version 3 - Current</h4>
+            <p>Modified 2 hours ago by You</p>
+          </div>
+          <div class="version-actions">
+            <span class="version-badge badge-current">Current</span>
+          </div>
+        </div>
+
+        <div class="version-item">
+          <div class="version-info">
+            <h4>Version 2</h4>
+            <p>Modified yesterday at 3:45 PM by You</p>
+          </div>
+          <div class="version-actions">
+            <button
+              class="btn btn-secondary btn-small"
+              onclick="restoreVersion(2)"
+            >
+              <i class="fas fa-undo"></i> Restore
+            </button>
+          </div>
+        </div>
+
+        <div class="version-item">
+          <div class="version-info">
+            <h4>Version 1 - Initial</h4>
+            <p>Created on Sept 28, 2025 at 10:30 AM by You</p>
+          </div>
+          <div class="version-actions">
+            <button
+              class="btn btn-secondary btn-small"
+              onclick="restoreVersion(1)"
+            >
+              <i class="fas fa-undo"></i> Restore
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeVersionsModal()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
