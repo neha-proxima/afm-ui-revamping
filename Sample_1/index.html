@@ -38,9 +38,9 @@
       // Dynamically load components
       loadHTML("sidebar", "/Sample_1/sidebar.html");
       loadHTML("header", "/Sample_1/header.html");
-      loadHTML("settings", "/Sample_1/settings.html");
-      loadHTML("dashboard", "/Sample_1/dashboard.html");
-      loadHTML("diagrams", "/Sample_1/diagrams.html");
+      loadHTML("settingsContent", "/Sample_1/settings.html");
+      loadHTML("dashboardContent", "/Sample_1/dashboard.html");
+      loadHTML("diagramContent", "/Sample_1/diagrams.html");
       loadHTML("diagram_canvas", "/Sample_1/diagram_canvas.html");
       loadHTML("plan_upgrade", "/Sample_1/plan_upgrade.html");
     </script>
@@ -63,21 +63,21 @@
 
       <div class="content-body">
         <!-- Dashboard -->
-        <div id="dashboard"></div>
+        <div id="dashboardContent"></div>
 
         <!-- Settings -->
-        <div id="settings"></div>
+        <div id="settingsContent" style="display: none;"></div>
 
         <!-- diagrams -->
-        <div id="diagrams"></div>
+        <div id="diagramContent" style="display: none;"></div>
 
         <!-- diagram Canvas -->
-        <div id="diagram_canvas"></div>
+        <div id="diagram_canvas" style="display: none"></div>
 
         <!-- plan upgrade -->
         <div id="plan_upgrade"></div>
 
-        <div class="placeholder-content" id="defaultContent">
+        <div class="placeholder-content" id="defaultContent" style="display: none;">
           <h3>Content Area</h3>
           <p>
             This is where the main content for the selected navigation item will

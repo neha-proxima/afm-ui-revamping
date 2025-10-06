@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Layout</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Sample_2/main.css" />
+    <script>
+      function loadHTML(id, file) {
+        fetch(file)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`HTTP error! status: ${response.status}`);
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((err) => console.error(`Failed to load ${file}: ${err}`));
+      }
+
+      // Dynamically load components
+      loadHTML("sidebar", "/Sample_2/sidebar.html");
+      loadHTML("header", "/Sample_2/header.html");
+      loadHTML("dashboard", "/Sample_2/dashboard.html");
+      loadHTML("settings", "/Sample_2/settings.html");
+      loadHTML("diagrams", "/Sample_2/diagrams.html");
+      loadHTML("diagram_canvas", "/Sample_2/diagram_canvas.html");
+      loadHTML("plan_upgrade", "/Sample_2/plan_upgrade.html");
+    </script>
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div id="sidebar"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Top Navigation -->
+      <div id="header"></div>
+
+      <!-- Router View / Content Area -->
+      <main class="router-view" id="router-view">
+        <!-- Dashboard -->
+        <div id="dashboard"></div>
+
+        <!-- Settings -->
+        <div id="settings" style="display: none"></div>
+
+        <!-- Diagrams -->
+        <div id="diagrams" style="display: none"></div>
+
+        <!-- Diagrams -->
+        <div id="diagram_canvas" style="display: none"></div>
+
+        <!-- Diagrams -->
+        <div id="plan_upgrade"></div>
+
+        <div id="default" class="content-placeholder" style="display: none">
+          <h2>Router View Content</h2>
+          <p>All page content will be rendered here</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/Sample_2/main.js"></script>
+  </body>
+</html>

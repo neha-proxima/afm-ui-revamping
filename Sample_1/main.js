@@ -35,32 +35,27 @@ function setActiveNav(element, title, description) {
   document.getElementById("pageDescription").textContent = description;
 
   // Show/hide content based on selection
-  const settingsContent = document.getElementById("settingsContent");
-  const defaultContent = document.getElementById("defaultContent");
-  const diagramContent = document.getElementById("diagramContent");
-  const dashboardContent = document.getElementById("dashboardContent");
+  // Define all possible content sections
+  const sections = [
+    document.getElementById("settingsContent"),
+    document.getElementById("defaultContent"),
+    document.getElementById("diagramContent"),
+    document.getElementById("dashboardContent"),
+  ];
+
+  // Hide all sections first
+  sections.forEach((section) => {
+    if (section) section.style.display = "none";
+  });
 
   if (title === "Settings") {
-    dashboardContent.style.display = "none";
-    defaultContent.style.display = "none";
-    diagramContent.style.display = "none";
-    settingsContent.style.display = "block";
+    document.getElementById("settingsContent").style.display = "block";
   } else if (title === "Dashboard") {
-    defaultContent.style.display = "none";
-    settingsContent.style.display = "none";
-    diagramContent.style.display = "none";
-    dashboardContent.style.display = "block";
+    document.getElementById("dashboardContent").style.display = "block";
   } else if (title === "Diagrams") {
-    settingsContent.style.display = "none";
-    dashboardContent.style.display = "none";
-    defaultContent.style.display = "none";
-    diagramContent.style.display = "block";
-  } else if (title === "Samples") {
-    window.location.href = "/"; // Replace with actual URL
+    document.getElementById("diagramContent").style.display = "block";
   } else {
-    settingsContent.style.display = "none";
-    dashboardContent.style.display = "none";
-    defaultContent.style.display = "block";
+    document.getElementById("defaultContent").style.display = "block";
   }
 
   // Close profile dropdown if open
@@ -587,7 +582,6 @@ function nextStep() {
   if (currentStep < totalSteps) {
     currentStep++;
     updateStepIndicator();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
 
@@ -595,12 +589,7 @@ function prevStep() {
   if (currentStep > 1) {
     currentStep--;
     updateStepIndicator();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
-}
-
-function goBack() {
-  window.history.back();
 }
 
 function completeCheckout() {

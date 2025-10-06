@@ -1,0 +1,660 @@
+<div class="settings-container" id="settingsContent">
+  <!-- Settings Sidebar -->
+  <aside class="settings-sidebar">
+    <div class="settings-category">
+      <div class="category-title">Account Settings</div>
+      <div
+        class="settings-menu-item active"
+        data-tab="general"
+        onclick="setActiveSettingsItem()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        General
+      </div>
+      <div
+        class="settings-menu-item"
+        data-tab="authentication"
+        onclick="setActiveSettingsItem()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path
+            d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"
+          />
+          <path d="M9 11V9a3 3 0 1 1 6 0v2" />
+        </svg>
+        Authentication
+      </div>
+      <div
+        class="settings-menu-item"
+        data-tab="billing"
+        onclick="setActiveSettingsItem()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+          <path d="M1 10h22" />
+        </svg>
+        Billing
+      </div>
+      <div
+        class="settings-menu-item"
+        data-tab="invoices"
+        onclick="setActiveSettingsItem()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path
+            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+          />
+          <path d="M14 2v6h6" />
+          <path d="M8 13h8" />
+          <path d="M8 17h8" />
+        </svg>
+        Invoices
+      </div>
+      <div
+        class="settings-menu-item"
+        data-tab="preferences"
+        onclick="setActiveSettingsItem()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+          />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        Preferences
+      </div>
+    </div>
+  </aside>
+
+  <!-- Settings Content -->
+  <main class="settings-content">
+    <!-- General Tab -->
+    <div class="tab-content active" id="general-tab">
+      <div class="content-section">
+        <h2 class="section-title">My Profile</h2>
+
+        <div class="profile-upload">
+          <div class="profile-image">A</div>
+          <div>
+            <div class="upload-buttons">
+              <button class="btn btn-primary">+ Change Image</button>
+              <button class="btn btn-secondary">Remove Image</button>
+            </div>
+            <p class="upload-info">We support PNGs, JPEGs and GIFs under 2MB</p>
+          </div>
+        </div>
+
+        <form>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-input"
+                value="Brian"
+                placeholder="Enter first name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-input"
+                value="Frederin"
+                placeholder="Enter last name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter company name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input
+                type="email"
+                class="form-input"
+                value="brianfrederin@email.com"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input
+                type="tel"
+                class="form-input"
+                placeholder="Enter phone number"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Street Address</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter street address"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input type="text" class="form-input" placeholder="Enter city" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">ZIP/Postal Code</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter ZIP code"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">State/Province</label>
+              <select class="form-select">
+                <option>Select state</option>
+                <option>California</option>
+                <option>New York</option>
+                <option>Texas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Country</label>
+              <select class="form-select">
+                <option>Select country</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Authentication Tab -->
+    <div class="tab-content" id="authentication-tab" style="display: none">
+      <div class="content-section">
+        <h2 class="section-title">Account Security</h2>
+
+        <h3 class="subsection-title">Sign-in Methods</h3>
+        <div class="form-grid single">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              value="brianfrederin@email.com"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div style="display: flex; gap: 12px; align-items: center">
+              <input
+                type="password"
+                class="form-input"
+                value="••••••••••"
+                disabled
+                style="flex: 1"
+              />
+              <button class="btn btn-secondary">Change Password</button>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px">
+          Two-Factor Authentication
+        </h3>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>2-Step Verifications</h4>
+            <p>
+              Add an additional layer of security to your account during login.
+            </p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px">
+          Support Access
+        </h3>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Support Access</h4>
+            <p>
+              You have granted us access to your account for support purposes
+              until Aug 31, 2023, 9:40 PM.
+            </p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 8px;
+          "
+        >
+          <h4
+            style="
+              font-size: 16px;
+              font-weight: 600;
+              color: var(--gray-900);
+              margin-bottom: 8px;
+            "
+          >
+            Log out of all devices
+          </h4>
+          <p
+            style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px"
+          >
+            Log out of all other active sessions on other devices besides this
+            one.
+          </p>
+          <button class="btn btn-secondary">Log Out</button>
+        </div>
+
+        <div
+          style="
+            margin-top: 32px;
+            padding: 24px;
+            background: #fef2f2;
+            border-radius: 8px;
+            border: 1px solid #fecaca;
+          "
+        >
+          <h4
+            style="
+              font-size: 16px;
+              font-weight: 600;
+              color: var(--error);
+              margin-bottom: 8px;
+            "
+          >
+            Delete my account
+          </h4>
+          <p
+            style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px"
+          >
+            This will permanently delete your account and remove access from all
+            workspaces.
+          </p>
+          <button class="btn btn-danger">Delete Account</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Billing Tab -->
+    <div class="tab-content" id="billing-tab" style="display: none">
+      <div class="content-section">
+        <h2 class="section-title">Billing Information</h2>
+
+        <h3 class="subsection-title">Current Subscription</h3>
+        <div
+          style="
+            padding: 24px;
+            background: linear-gradient(
+              135deg,
+              rgba(0, 102, 255, 0.05) 0%,
+              rgba(0, 102, 255, 0.02) 100%
+            );
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            margin-bottom: 32px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: start;
+            "
+          >
+            <div>
+              <span class="plan-badge">CURRENT PLAN</span>
+              <h3 style="font-size: 24px; font-weight: 600; margin-top: 12px">
+                Pro Plan
+              </h3>
+              <p style="color: var(--gray-600); margin-top: 8px">
+                Next renewal: December 15, 2025
+              </p>
+            </div>
+            <div style="text-align: right">
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 700;
+                  color: var(--gray-900);
+                "
+              >
+                $29<span
+                  style="
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: var(--gray-600);
+                  "
+                  >/mo</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Upgrade Plan</h3>
+        <div class="plans-grid">
+          <div class="plan-card">
+            <div class="plan-name">Free</div>
+            <div class="plan-price">$0<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>Up to 5 diagrams</li>
+              <li>Basic templates</li>
+              <li>Export to PNG</li>
+              <li>Community support</li>
+            </ul>
+            <button
+              class="btn btn-secondary"
+              style="width: 100%; margin-top: 16px"
+            >
+              Current Plan
+            </button>
+          </div>
+
+          <div class="plan-card current">
+            <span class="plan-badge">CURRENT</span>
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$29<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>Unlimited diagrams</li>
+              <li>All templates</li>
+              <li>Export to multiple formats</li>
+              <li>Priority support</li>
+              <li>Team collaboration (15 members)</li>
+            </ul>
+            <button
+              class="btn btn-primary"
+              style="width: 100%; margin-top: 16px"
+            >
+              Current Plan
+            </button>
+          </div>
+
+          <div class="plan-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">$99<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>Everything in Pro</li>
+              <li>Unlimited team members</li>
+              <li>Advanced security</li>
+              <li>Dedicated support</li>
+              <li>Custom integrations</li>
+            </ul>
+            <button
+              class="btn btn-primary"
+              style="width: 100%; margin-top: 16px"
+              onclick="openPlanUpgradeModal()"
+            >
+              Upgrade
+            </button>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px">
+          Payment Method
+        </h3>
+        <form>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label class="form-label">Name on Card</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter cardholder name"
+              />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Card Number</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="1234 5678 9012 3456"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Expiration Date</label>
+              <input type="text" class="form-input" placeholder="MM/YY" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input type="text" class="form-input" placeholder="123" />
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Billing Address</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter billing address"
+              />
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="openPlanUpgradeModal()">
+            Update Payment Method
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Invoices Tab -->
+    <div class="tab-content" id="invoices-tab" style="display: none">
+      <div class="content-section">
+        <h2 class="section-title">Invoices</h2>
+
+        <table class="invoice-table">
+          <thead>
+            <tr>
+              <th>Invoice ID</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#INV-2024-001</td>
+              <td>Oct 01, 2024</td>
+              <td>$29.00</td>
+              <td><span class="status-badge paid">Paid</span></td>
+              <td><span class="download-btn">Download</span></td>
+            </tr>
+            <tr>
+              <td>#INV-2024-002</td>
+              <td>Sep 01, 2024</td>
+              <td>$29.00</td>
+              <td><span class="status-badge paid">Paid</span></td>
+              <td><span class="download-btn">Download</span></td>
+            </tr>
+            <tr>
+              <td>#INV-2024-003</td>
+              <td>Aug 01, 2024</td>
+              <td>$29.00</td>
+              <td><span class="status-badge paid">Paid</span></td>
+              <td><span class="download-btn">Download</span></td>
+            </tr>
+            <tr>
+              <td>#INV-2024-004</td>
+              <td>Jul 01, 2024</td>
+              <td>$29.00</td>
+              <td><span class="status-badge paid">Paid</span></td>
+              <td><span class="download-btn">Download</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subsection-title" style="margin-top: 32px">Tax Details</h3>
+        <form>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Tax ID</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter tax ID"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tax Country</label>
+              <select class="form-select">
+                <option>Select country</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Business Name</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter business name"
+              />
+            </div>
+          </div>
+          <button class="btn btn-primary">
+            Save Tax Details
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Preferences Tab -->
+    <div class="tab-content" id="preferences-tab" style="display: none">
+      <div class="content-section">
+        <h2 class="section-title">Preferences</h2>
+
+        <h3 class="subsection-title">Appearance</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Theme</label>
+            <select class="form-select">
+              <option>Light</option>
+              <option>Dark</option>
+              <option>System</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Language</label>
+            <select class="form-select">
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+              <option>German</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px">Notifications</h3>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Email Notifications</h4>
+            <p>Receive email notifications about your account activity.</p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Push Notifications</h4>
+            <p>Receive push notifications in your browser.</p>
+          </div>
+          <div class="toggle-switch">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Marketing Emails</h4>
+            <p>Receive emails about new features and updates.</p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px">
+          Privacy & Security
+        </h3>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Profile Visibility</h4>
+            <p>Make your profile visible to other users.</p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Show Activity Status</h4>
+            <p>Let others see when you're online.</p>
+          </div>
+          <div class="toggle-switch">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Data Analytics</h4>
+            <p>
+              Allow us to collect anonymous usage data to improve our service.
+            </p>
+          </div>
+          <div class="toggle-switch active">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

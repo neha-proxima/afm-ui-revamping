@@ -1,0 +1,524 @@
+<div class="modal-overlay" id="planUpgrade">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Upgrade Plan</h2>
+      <button class="modal-close" onclick="closeUpgradePlanModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Progress Steps -->
+      <div class="progress-section">
+        <div class="steps-container">
+          <div class="step-line"></div>
+          <div
+            class="step-line-progress"
+            id="progress-line"
+            style="width: 0%"
+          ></div>
+
+          <div class="step active" data-step="1">
+            <div class="step-number">1</div>
+            <div class="step-label">Select Plan</div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-number">2</div>
+            <div class="step-label">Address Details</div>
+          </div>
+          <div class="step" data-step="3">
+            <div class="step-number">3</div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="step" data-step="4">
+            <div class="step-number">4</div>
+            <div class="step-label">Tax ID</div>
+          </div>
+          <div class="step" data-step="5">
+            <div class="step-number">5</div>
+            <div class="step-label">Review</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Container -->
+      <div class="payment-container">
+        <!-- Form Section -->
+        <div class="form-section">
+          <!-- Step 1: Select Plan -->
+          <div class="step-content active" id="step-1">
+            <h2 class="section-title">Select Your Plan</h2>
+            <p class="section-subtitle">
+              Choose the number of users and apply any coupon codes
+            </p>
+
+            <div class="form-grid single">
+              <div class="form-group">
+                <label class="form-label">Number of Users</label>
+                <select class="form-select" id="users-count">
+                  <option value="1">1 User - $29/month</option>
+                  <option value="5">5 Users - $125/month</option>
+                  <option value="10">10 Users - $230/month</option>
+                  <option value="15" selected>15 Users - $320/month</option>
+                  <option value="25">25 Users - $500/month</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Coupon Code (Optional)</label>
+                <div class="coupon-row">
+                  <input
+                    type="text"
+                    class="form-input coupon-input"
+                    id="coupon-code"
+                    placeholder="Enter coupon code"
+                  />
+                  <button class="btn btn-secondary" id="apply-coupon">
+                    Apply
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                class="btn btn-primary"
+                style="margin-left: auto"
+                onclick="nextStep()"
+              >
+                Continue
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14m-7-7 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Address Details -->
+          <div class="step-content" id="step-2">
+            <h2 class="section-title">Address Details</h2>
+            <p class="section-subtitle">
+              Enter your billing address information
+            </p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter first name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter last name"
+                />
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Organization Name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter organization name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Country</label>
+                <select class="form-select">
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                  <option>India</option>
+                  <option>Australia</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">ZIP/Postal Code</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter ZIP code"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">City</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter city"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">State/Province</label>
+                <select class="form-select">
+                  <option>Select state</option>
+                  <option>California</option>
+                  <option>New York</option>
+                  <option>Texas</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-input"
+                  placeholder="Enter phone number"
+                />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-secondary" onclick="prevStep()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M19 12H5m7 7-7-7 7-7" />
+                </svg>
+                Back
+              </button>
+              <button
+                class="btn btn-primary"
+                style="margin-left: auto"
+                onclick="nextStep()"
+              >
+                Continue
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14m-7-7 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Pay with Card -->
+          <div class="step-content" id="step-3">
+            <h2 class="section-title">Payment Information</h2>
+            <p class="section-subtitle">Enter your card details securely</p>
+
+            <div class="secure-badge">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"
+                />
+                <path d="M9 11V9a3 3 0 1 1 6 0v2" />
+              </svg>
+              <span>Secure Payment - Your information is encrypted</span>
+            </div>
+
+            <div class="form-grid single">
+              <div class="form-group">
+                <label class="form-label">Cardholder Name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Name on card"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Card Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                />
+                <div class="card-icons">
+                  <div class="card-icon">VISA</div>
+                  <div class="card-icon">MC</div>
+                  <div class="card-icon">AMEX</div>
+                  <div class="card-icon">DISC</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Expiration Date</label>
+                <input type="text" class="form-input" placeholder="MM/YY" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="123"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-secondary" onclick="prevStep()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M19 12H5m7 7-7-7 7-7" />
+                </svg>
+                Back
+              </button>
+              <button
+                class="btn btn-primary"
+                style="margin-left: auto"
+                onclick="nextStep()"
+              >
+                Continue
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14m-7-7 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Tax ID Details -->
+          <div class="step-content" id="step-4">
+            <h2 class="section-title">Tax ID Details</h2>
+            <p class="section-subtitle">
+              Provide your tax identification information (Optional)
+            </p>
+
+            <div class="form-grid single">
+              <div class="form-group">
+                <label class="form-label">Tax ID Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter tax ID number"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">VAT Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter VAT number"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Business Registration Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter business registration number"
+                />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-secondary" onclick="prevStep()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M19 12H5m7 7-7-7 7-7" />
+                </svg>
+                Back
+              </button>
+              <button
+                class="btn btn-primary"
+                style="margin-left: auto"
+                onclick="nextStep()"
+              >
+                Continue
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14m-7-7 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 5: Review -->
+          <div class="step-content" id="step-5">
+            <h2 class="section-title">Review Your Order</h2>
+            <p class="section-subtitle">
+              Please review all details before completing your purchase
+            </p>
+
+            <div class="review-section">
+              <h4>Plan Details</h4>
+              <div class="review-item">
+                <span class="review-label">Plan:</span>
+                <span class="review-value">Pro Plan</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Users:</span>
+                <span class="review-value">15 Users</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Billing Cycle:</span>
+                <span class="review-value">Monthly</span>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <h4>Billing Address</h4>
+              <div class="review-item">
+                <span class="review-label">Name:</span>
+                <span class="review-value">Brian Frederin</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Organization:</span>
+                <span class="review-value">Acme Corporation</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Address:</span>
+                <span class="review-value"
+                  >123 Main St, San Francisco, CA 94102</span
+                >
+              </div>
+              <div class="review-item">
+                <span class="review-label">Country:</span>
+                <span class="review-value">United States</span>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <h4>Payment Method</h4>
+              <div class="review-item">
+                <span class="review-label">Card:</span>
+                <span class="review-value">Visa ending in 3456</span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-secondary" onclick="prevStep()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M19 12H5m7 7-7-7 7-7" />
+                </svg>
+                Back
+              </button>
+              <button
+                class="btn btn-primary"
+                style="margin-left: auto"
+                onclick="completePayment()"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 11l3 3L22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </svg>
+                Complete Payment
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Sidebar -->
+        <div class="summary-card">
+          <h3 class="summary-title">Order Summary</h3>
+
+          <div class="plan-info">
+            <div class="plan-name">Pro Plan</div>
+            <div class="plan-price">$320<span>/month</span></div>
+          </div>
+
+          <div class="summary-row">
+            <span class="summary-label">15 Users × $29</span>
+            <span class="summary-value">$435.00</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Volume Discount (25%)</span>
+            <span class="summary-value" style="color: var(--success)"
+              >-$108.75</span
+            >
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Coupon Discount</span>
+            <span class="summary-value" style="color: var(--success)"
+              >-$0.00</span
+            >
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Subtotal</span>
+            <span class="summary-value">$326.25</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Tax (8%)</span>
+            <span class="summary-value">$26.10</span>
+          </div>
+
+          <div class="summary-total">
+            <div class="summary-row">
+              <span class="total-label">Total Due Today</span>
+              <span class="total-value">$352.35</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
