@@ -371,3 +371,8 @@ function openPlanUpgradeModal() {
 function closeUpgradePlanModal() {
     document.getElementById("planUpgrade").classList.remove("active");
 }
+
+function openDropDownMenu() {
+  const profileDropdown = document.getElementById('profile-dropdown');
+  profileDropdown.classList.toggle('active');
+}
