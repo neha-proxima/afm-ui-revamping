@@ -431,3 +431,87 @@ function setActiveSettingsItem() {
     });
   });
 }
+
+let currentStep = 1;
+const totalSteps = 5;
+
+function nextStep() {
+  if (currentStep < totalSteps) {
+    currentStep++;
+    updateSteps();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    currentStep--;
+    updateSteps();
+  }
+}
+
+function updateSteps() {
+  // Update step indicators
+  const steps = document.querySelectorAll(".step");
+  steps.forEach((step, index) => {
+    const stepNumber = index + 1;
+    step.classList.remove("active", "completed");
+
+    if (stepNumber < currentStep) {
+      step.classList.add("completed");
+    } else if (stepNumber === currentStep) {
+      step.classList.add("active");
+    }
+  });
+
+  // Update progress line
+  const progressPercentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
+  document.getElementById("progress-line").style.width =
+    progressPercentage + "%";
+
+  // Update step content
+  document.querySelectorAll(".step-content").forEach((content, index) => {
+    content.classList.remove("active");
+    if (index + 1 === currentStep) {
+      content.classList.add("active");
+    }
+  });
+}
+
+function completePayment() {
+  alert(
+    "Processing payment...\n\nThank you for upgrading to Pro Plan!\nYour account will be activated immediately."
+  );
+  console.log("Payment completed successfully!");
+}
+
+function openPlanUpgradeModal() {
+  document.getElementById("planUpgrade").classList.add("active");
+
+  // User count change handler
+  document
+    .getElementById("users-count")
+    .addEventListener("change", function (e) {
+      const value = e.target.value;
+      console.log("Users changed to:", value);
+      // Update pricing calculations here
+    });
+
+  // Apply coupon handler
+  document
+    .getElementById("apply-coupon")
+    .addEventListener("click", function () {
+      const couponCode = document.getElementById("coupon-code").value;
+      if (couponCode) {
+        alert('Coupon "' + couponCode + '" applied!');
+        console.log("Coupon applied:", couponCode);
+      } else {
+        alert("Please enter a coupon code");
+      }
+    });
+  // Initialize
+  updateSteps();
+}
+
+function closeUpgradePlanModal() {
+  document.getElementById("planUpgrade").classList.remove("active");
+}
