@@ -1,0 +1,810 @@
+<div class="dashboard-page active" id="dashboardPage">
+  <div class="content-header">
+    <div>Dashboard</div>
+    <p>View all of your account related information at a glance.</p>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Total Diagrams</span>
+        <div class="stat-icon blue">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">124</div>
+      <div class="stat-subtitle">All time created</div>
+      <span class="stat-change positive">↑ 2% from last week</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Active Diagrams</span>
+        <div class="stat-icon green">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">89</div>
+      <div class="stat-subtitle">Currently in use</div>
+      <span class="stat-change positive">↑ 3 from last week</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Archived</span>
+        <div class="stat-icon gray">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">35</div>
+      <div class="stat-subtitle">Total in use</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Shared Diagrams</span>
+        <div class="stat-icon purple">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="stat-value">23</div>
+      <div class="stat-subtitle">Collaborating projects</div>
+      <span class="stat-change warning">2 pending invitations</span>
+    </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-content">
+    <div class="dashboard-left">
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title">Recent Activity</h2>
+          <a class="view-all-link">View All →</a>
+        </div>
+        <div>
+          <div class="activity-item">
+            <div class="activity-icon blue">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">
+                Created diagram "Project Roadmap Q4"
+              </div>
+              <div class="activity-time">2 hours ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon purple">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                />
+              </svg>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">
+                Shared "Team Workflow" with John Doe
+              </div>
+              <div class="activity-time">3 hours ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon green">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">
+                Reviewed version 3 of "App Architecture"
+              </div>
+              <div class="activity-time">Yesterday at 3:21 PM</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div
+              class="activity-icon"
+              style="background-color: #fef3c7; color: #f59e0b"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">
+                Uploaded "API Flow Diagram" to PRJ
+              </div>
+              <div class="activity-time">Yesterday at 9:32 AM</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon blue">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">Updated "Database Schema v2"</div>
+              <div class="activity-time">2 days ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Collaborators -->
+      <div class="card">
+        <div class="section-header">
+          <h2 class="section-title">Recent Collaborators</h2>
+          <a class="view-all-link">View Team →</a>
+        </div>
+        <div>
+          <div class="collaborator-item">
+            <div class="collaborator-avatar" style="background-color: #0066ff">
+              JD
+            </div>
+            <div class="collaborator-info">
+              <div class="collaborator-name">John Doe</div>
+              <div class="collaborator-action">
+                Edited "Team Workflow" • 2 hours ago
+              </div>
+            </div>
+          </div>
+          <div class="collaborator-item">
+            <div class="collaborator-avatar" style="background-color: #10b981">
+              NS
+            </div>
+            <div class="collaborator-info">
+              <div class="collaborator-name">Neha Sharma</div>
+              <div class="collaborator-action">
+                Reviewed "UI App Architecture" • Yesterday
+              </div>
+            </div>
+          </div>
+          <div class="collaborator-item">
+            <div class="collaborator-avatar" style="background-color: #f59e0b">
+              MP
+            </div>
+            <div class="collaborator-info">
+              <div class="collaborator-name">Michael Park</div>
+              <div class="collaborator-action">
+                Shared "Database Design" • 3 days ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-right">
+      <!-- Account Info -->
+      <div class="card">
+        <h2 class="section-title" style="margin-bottom: 16px">Account</h2>
+        <div class="account-item">
+          <span class="account-label">Current Plan</span>
+          <span class="account-badge">Pro</span>
+        </div>
+        <div class="account-item">
+          <span class="account-label">Last Password Change</span>
+          <span class="account-value">Aug 16, 2023</span>
+        </div>
+        <div class="account-item">
+          <span class="account-label">Next Billing</span>
+          <span class="account-value">Oct 28, 2025</span>
+        </div>
+        <div class="account-item">
+          <span class="account-label">Last Login</span>
+          <span class="account-value">Today, 9:21 AM</span>
+        </div>
+        <button class="manage-account-btn">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          Manage Account
+        </button>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card">
+        <h2 class="section-title" style="margin-bottom: 16px">Quick Actions</h2>
+        <div class="quick-actions-grid">
+          <button class="quick-action-btn" onclick="showCanvasPage()">
+            <div
+              class="quick-action-icon"
+              style="background-color: #dbeafe; color: #0066ff"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </div>
+            New Diagram
+          </button>
+          <button class="quick-action-btn">
+            <div
+              class="quick-action-icon"
+              style="background-color: #d1fae5; color: #10b981"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                />
+              </svg>
+            </div>
+            Browse All
+          </button>
+          <button class="quick-action-btn">
+            <div
+              class="quick-action-icon"
+              style="background-color: #fef3c7; color: #f59e0b"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+            </div>
+            Export
+          </button>
+          <button class="quick-action-btn">
+            <div
+              class="quick-action-icon"
+              style="background-color: #fee2e2; color: #ef4444"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            Security
+          </button>
+        </div>
+      </div>
+
+      <!-- Most Active Diagram -->
+      <div class="card">
+        <h2 class="section-title" style="margin-bottom: 16px">
+          Most Active Diagram
+        </h2>
+        <div class="diagram-preview">
+          <div class="diagram-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
+          </div>
+          <div class="diagram-title">Project Roadmap Q4</div>
+          <div class="diagram-subtitle">Edited 19 times this month</div>
+          <button class="open-diagram-btn">Open Diagram →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Archived Diagrams Grid -->
+    <div class="diagrams-grid" id="archivedDiagrams" style="display: none">
+      <!-- Archived Diagram Card 1 -->
+      <div class="diagram-card">
+        <div class="diagram-card-header">
+          <div class="diagram-card-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+              />
+            </svg>
+          </div>
+          <div class="diagram-card-content">
+            <h3 class="diagram-card-title">Legacy System Architecture</h3>
+            <div class="diagram-card-meta">
+              <span class="plan-badge enterprise">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                ENTERPRISE
+              </span>
+              <span class="diagram-date">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Aug 15, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-card-footer">
+          <div class="diagram-stats">
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              342
+            </span>
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+              89
+            </span>
+          </div>
+          <div class="diagram-actions">
+            <button class="diagram-action-btn restore">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+              Restore
+            </button>
+            <button class="diagram-action-btn delete">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Archived Diagram Card 2 -->
+      <div class="diagram-card">
+        <div class="diagram-card-header">
+          <div class="diagram-card-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+              />
+            </svg>
+          </div>
+          <div class="diagram-card-content">
+            <h3 class="diagram-card-title">Old Payment Flow</h3>
+            <div class="diagram-card-meta">
+              <span class="plan-badge pro">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                PRO
+              </span>
+              <span class="diagram-date">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Jul 22, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-card-footer">
+          <div class="diagram-stats">
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              156
+            </span>
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+              41
+            </span>
+          </div>
+          <div class="diagram-actions">
+            <button class="diagram-action-btn restore">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+              Restore
+            </button>
+            <button class="diagram-action-btn delete">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Archived Diagram Card 3 -->
+      <div class="diagram-card">
+        <div class="diagram-card-header">
+          <div class="diagram-card-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+              />
+            </svg>
+          </div>
+          <div class="diagram-card-content">
+            <h3 class="diagram-card-title">Prototype Design v1</h3>
+            <div class="diagram-card-meta">
+              <span class="plan-badge free"> FREE </span>
+              <span class="diagram-date">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Jun 10, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-card-footer">
+          <div class="diagram-stats">
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              78
+            </span>
+            <span class="stat-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+              15
+            </span>
+          </div>
+          <div class="diagram-actions">
+            <button class="diagram-action-btn restore">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+              Restore
+            </button>
+            <button class="diagram-action-btn delete">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Cards -->
+  <div class="bottom-cards">
+    <div class="info-card" style="background-color: #eff6ff">
+      <div class="info-card-header">
+        <svg
+          class="info-card-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+          />
+        </svg>
+        <h3 class="info-card-title">Monthly Goal Progress</h3>
+      </div>
+      <p class="info-card-text">
+        You're at 7 out of 10 diagrams this month. Keep up the good work!
+      </p>
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 70%"></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <svg
+          class="info-card-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <h3 class="info-card-title">At Budget</h3>
+      </div>
+      <p class="info-card-text">
+        You've created 2 project workflow diagrams this month. Consider using
+        templates to save time.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <svg
+          class="info-card-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+        <h3 class="info-card-title">What's New</h3>
+      </div>
+      <p class="info-card-text">
+        New feature: Auto-save is now enabled by default. Your work is always
+        protected!
+      </p>
+    </div>
+  </div>
+</div>

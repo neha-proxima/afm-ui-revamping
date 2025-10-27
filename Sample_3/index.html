@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Flow Mapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/Sample_3/main.css" />
+    <script>
+      function loadHTML(id, file) {
+        fetch(file)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error(`HTTP error! status: ${response.status}`);
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((err) => console.error(`Failed to load ${file}: ${err}`));
+      }
+
+      // Dynamically load components
+      loadHTML("app_sidebar", "/Sample_3/sidebar.html");
+      loadHTML("app_header", "/Sample_3/header.html");
+      loadHTML("app_dashboard", "/Sample_3/dashboard.html");
+      loadHTML("app_settings", "/Sample_3/settings.html");
+      loadHTML("app_diagrams", "/Sample_3/diagrams.html");
+      loadHTML("app_diagram_canvas", "/Sample_3/diagram_canvas.html");
+      // loadHTML("plan_upgrade", "/Sample_3/plan_upgrade.html");
+    </script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" onclick="toggleMobileSidebar()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <!-- Overlay for mobile -->
+      <div class="overlay" onclick="toggleMobileSidebar()"></div>
+
+      <!-- Header -->
+      <div id="app_header"></div>
+
+      <!-- Sidebar -->
+      <div id="app_sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Dashboard Page -->
+        <div id="app_dashboard"></div>
+
+        <!-- Diagrams Page -->
+        <div id="app_diagrams" style="display: none"></div>
+
+        <!-- Canvas Page -->
+        <div id="app_diagram_canvas" style="display: none"></div>
+
+        <!-- Settings Page -->
+        <div id="app_settings" style="display: none"></div>
+      </main>
+    </div>
+
+    <script src="/Sample_3/main.js"></script>
+  </body>
+</html>

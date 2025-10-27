@@ -1,0 +1,334 @@
+<div class="canvas-page" id="canvasPage">
+  <div class="content-header">
+    <div>Diagram Canvas</div>
+    <p>View all of your account related information at a glance.</p>
+  </div>
+
+  <div
+    style="
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 32px;
+    "
+  >
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      "
+    >
+      <div class="canvas-title-section">
+        <div class="canvas-title-section">
+          <svg
+            class="canvas-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+            />
+          </svg>
+          <input
+            type="text"
+            class="canvas-title-input"
+            value="Untitled Mindmap"
+            placeholder="Enter diagram name"
+            oninput="markAsUnsaved()"
+          />
+          <div class="save-status" id="saveStatus">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Unsaved changes
+          </div>
+        </div>
+
+        <div class="canvas-toolbar">
+          <button class="toolbar-btn" onclick="toggleEditInfo()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Edit Info
+          </button>
+          <button class="toolbar-btn" onclick="toggleVersions()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Versions
+          </button>
+          <button class="toolbar-btn" onclick="toggleExportDropdown()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+            Export
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <div class="export-dropdown" id="exportDropdown">
+              <div class="export-option">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+                Export as PDF
+              </div>
+              <div class="export-option">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Export as Image
+              </div>
+            </div>
+          </button>
+          <button class="toolbar-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              />
+            </svg>
+            Export JSON
+          </button>
+          <button class="toolbar-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+              />
+            </svg>
+            Share
+          </button>
+          <button class="toolbar-btn primary" onclick="saveDiagram()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+              />
+            </svg>
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas-content">
+      <div class="canvas-empty-state">
+        <svg
+          class="canvas-empty-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+          />
+        </svg>
+        <h2>Your mindmap canvas</h2>
+        <p>
+          Start creating your mindmap here. The canvas is ready for your ideas!
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+      onclick="closeAllModals()"
+    ></div>
+
+    <!-- Edit Info Modal -->
+    <div class="edit-info-modal" id="editInfoModal">
+      <div class="modal-header">
+        <h2 class="modal-title">Edit Diagram Information</h2>
+        <button class="close-modal-btn" onclick="toggleEditInfo()">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-tabs">
+        <div
+          class="modal-tab active"
+          onclick="switchModalTab(event, 'dataDriven')"
+        >
+          Data Driven
+        </div>
+        <div class="modal-tab" onclick="switchModalTab(event, 'jsonImport')">
+          From JSON Import
+        </div>
+      </div>
+
+      <div class="modal-content" id="dataDrivenTab">
+        <div class="form-group">
+          <label class="form-label">Diagram Topic</label>
+          <input
+            type="text"
+            class="form-input"
+            placeholder="e.g., User Authentication Flow"
+            oninput="markAsUnsaved()"
+          />
+          <p class="form-hint">
+            Provide a clear and concise topic for your diagram. Examples:
+            "E-commerce Checkout Process", "Database Architecture"
+          </p>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="moreDetails" onchange="markAsUnsaved()" />
+          <label for="moreDetails">I have more details</label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Explain the Diagram Requirement</label>
+          <textarea
+            class="form-input form-textarea"
+            placeholder="Describe what you want to visualize in detail..."
+            oninput="markAsUnsaved()"
+          ></textarea>
+          <p class="form-hint">
+            Provide specific details about entities, relationships, workflows,
+            or any other important aspects you want to include in your diagram.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-content" id="jsonImportTab" style="display: none">
+        <div class="form-group">
+          <label class="form-label">JSON Data</label>
+          <textarea
+            class="form-input form-textarea form-code"
+            placeholder='{"nodes": [{ "id": "1", "label": "Start" },{ "id": "2", "label": "Process" }], "edges": [{ "from": "1", "to": "2" }]}'
+            oninput="markAsUnsaved()"
+          ></textarea>
+          <p class="form-hint">
+            Paste your JSON data here to import and visualize your diagram
+            structure.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-btn cancel" onclick="toggleEditInfo()">
+          Cancel
+        </button>
+        <button class="modal-btn primary" onclick="applyChanges()">
+          Apply Changes
+        </button>
+      </div>
+    </div>
+
+    <!-- Version History Sidebar -->
+    <div class="version-sidebar" id="versionSidebar">
+      <div class="modal-header">
+        <h2 class="modal-title">Version History</h2>
+        <button class="close-modal-btn" onclick="toggleVersions()">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-content" style="padding: 0">
+        <div class="version-item">
+          <div class="version-name">Current Version</div>
+          <div class="version-meta">Edited by You • Just now</div>
+          <span class="version-badge">CURRENT</span>
+        </div>
+        <div class="version-item">
+          <div class="version-name">Version 3</div>
+          <div class="version-meta">Edited by You • 2 hours ago</div>
+        </div>
+        <div class="version-item">
+          <div class="version-name">Version 2</div>
+          <div class="version-meta">
+            Edited by John Doe • Yesterday at 3:42 PM
+          </div>
+        </div>
+        <div class="version-item">
+          <div class="version-name">Version 1</div>
+          <div class="version-meta">Created by You • Oct 1, 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

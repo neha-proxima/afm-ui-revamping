@@ -1,0 +1,370 @@
+<div class="modal-overlay" id="planUpgrade">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Upgrade Plan</h2>
+      <button class="modal-close" onclick="closePlanUpgradeModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="checkout-container">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+          <div class="step-item active" id="step1Item">
+            <div class="step-number-wrapper">
+              <div class="step-circle active" id="step1Circle">1</div>
+            </div>
+            <div class="step-label active" id="step1Label">Your plan</div>
+          </div>
+          <div class="step-item inactive" id="step2Item">
+            <div class="step-number-wrapper">
+              <div class="step-circle inactive" id="step2Circle">2</div>
+            </div>
+            <div class="step-label inactive" id="step2Label">Your Address</div>
+          </div>
+          <div class="step-item inactive" id="step3Item">
+            <div class="step-number-wrapper">
+              <div class="step-circle inactive" id="step3Circle">3</div>
+            </div>
+            <div class="step-label inactive" id="step3Label">Card Details</div>
+          </div>
+          <div class="step-item inactive" id="step4Item">
+            <div class="step-number-wrapper">
+              <div class="step-circle inactive" id="step4Circle">4</div>
+            </div>
+            <div class="step-label inactive" id="step4Label">
+              Tax ID (Optional)
+            </div>
+          </div>
+          <div class="step-item inactive" id="step5Item">
+            <div class="step-number-wrapper">
+              <div class="step-circle inactive" id="step5Circle">5</div>
+            </div>
+            <div class="step-label inactive" id="step5Label">
+              Review your details
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1: Your Plan -->
+        <div class="step-content active" id="step1">
+          <div class="form-card">
+            <div class="form-title">flowmapper.ai Basic</div>
+
+            <div class="plan-header">
+              <select class="user-select" id="userCount">
+                <option value="1">1 user</option>
+                <option value="2">2 users</option>
+                <option value="5">5 users</option>
+                <option value="10">10 users</option>
+              </select>
+              <div class="plan-price">1 Month $4.00</div>
+            </div>
+
+            <div class="coupon-section">
+              <label class="coupon-label">Enter Coupon Code:</label>
+              <input
+                type="text"
+                class="coupon-input"
+                placeholder="Enter coupon code(optional)"
+              />
+              <button class="apply-btn">Apply</button>
+            </div>
+
+            <div class="price-row">
+              <span>Tax</span>
+              <span>$0.00</span>
+            </div>
+
+            <div class="price-row total">
+              <span>Due today</span>
+              <span>$4.00</span>
+            </div>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn btn-back" onclick="goBack()">Back</button>
+            <button class="btn btn-continue" onclick="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Your Address -->
+        <div class="step-content" id="step2">
+          <div class="form-card">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label"
+                  >First Name <span class="required">*</span></label
+                >
+                <input type="text" class="form-input" value="Neha" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" value="Soni" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Organisation Name</label>
+              <input type="text" class="form-input" value="NSG" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label"
+                  >Country <span class="required">*</span></label
+                >
+                <select class="form-select">
+                  <option>India</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >Zip <span class="required">*</span></label
+                >
+                <input type="text" class="form-input" value="311001" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label"
+                  >City <span class="required">*</span></label
+                >
+                <input type="text" class="form-input" value="pune" />
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >Region <span class="required">*</span></label
+                >
+                <input type="text" class="form-input" value="India" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"
+                >Address <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                class="form-input"
+                value="Balewadi High Street"
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="phone-input-group">
+                <select class="country-code-select">
+                  <option>🇮🇳 +91</option>
+                  <option>🇺🇸 +1</option>
+                  <option>🇬🇧 +44</option>
+                </select>
+                <input
+                  type="tel"
+                  class="form-input phone-input"
+                  value="9000000000"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn btn-back" onclick="prevStep()">Back</button>
+            <button class="btn btn-continue" onclick="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Card Details -->
+        <div class="step-content" id="step3">
+          <div class="form-card">
+            <div class="payment-header">
+              <i class="far fa-credit-card card-icon"></i>
+              <div class="payment-title">Pay with card</div>
+              <div class="card-logos">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
+                  alt="Visa"
+                  class="card-logo"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                  alt="Mastercard"
+                  class="card-logo"
+                />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                  alt="Amex"
+                  class="card-logo"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Cardholder Name</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Cardholder Name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Card Number</label>
+              <input
+                type="text"
+                class="form-input card-number-input"
+                placeholder="•••• •••• •••• ••••"
+              />
+            </div>
+
+            <div class="card-details-row">
+              <div class="form-group">
+                <label class="form-label">Expiration Date</label>
+                <input type="text" class="form-input" placeholder="MM/YY" />
+                <div class="input-hint">(MM/YY)</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="•••"
+                  maxlength="3"
+                />
+                <div class="input-hint">(3 digits)</div>
+              </div>
+            </div>
+
+            <div class="privacy-notice">
+              By paying with my card, I agree to the PayPal Privacy Statement.
+            </div>
+
+            <button class="verify-btn">Verify</button>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn btn-back" onclick="prevStep()">Back</button>
+            <button class="btn btn-continue" onclick="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Tax ID (Optional) -->
+        <div class="step-content" id="step4">
+          <div class="form-card">
+            <div class="form-title">Tax ID (Optional)</div>
+
+            <div class="form-group">
+              <label class="form-label">Tax Identification Number</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter your tax ID (optional)"
+              />
+              <div class="input-hint">
+                This is optional and only required for business purposes
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">VAT Number</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter your VAT number (optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Business Registration Number</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter business registration number (optional)"
+              />
+            </div>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn btn-back" onclick="prevStep()">Back</button>
+            <button class="btn btn-continue" onclick="nextStep()">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5: Review -->
+        <div class="step-content" id="step5">
+          <div class="form-card">
+            <div class="form-title">Review your details</div>
+
+            <div class="review-section">
+              <div class="review-section-title">Plan Details</div>
+              <div class="review-item">
+                <span class="review-label">Plan:</span>
+                <span class="review-value">flowmapper.ai Basic</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Users:</span>
+                <span class="review-value">1 user</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Billing Period:</span>
+                <span class="review-value">Monthly</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Amount:</span>
+                <span class="review-value">$4.00</span>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <div class="review-section-title">Billing Address</div>
+              <div class="review-item">
+                <span class="review-label">Name:</span>
+                <span class="review-value">Neha Soni</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Organization:</span>
+                <span class="review-value">NSG</span>
+              </div>
+              <div class="review-item">
+                <span class="review-label">Address:</span>
+                <span class="review-value"
+                  >Balewadi High Street, pune, India 311001</span
+                >
+              </div>
+              <div class="review-item">
+                <span class="review-label">Phone:</span>
+                <span class="review-value">+91 9000000000</span>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <div class="review-section-title">Payment Method</div>
+              <div class="review-item">
+                <span class="review-label">Card:</span>
+                <span class="review-value">•••• •••• •••• ••••</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer nav-buttons">
+            <button class="btn btn-back" onclick="prevStep()">Back</button>
+            <button class="btn btn-continue" onclick="completeCheckout()">
+              Complete Purchase
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
